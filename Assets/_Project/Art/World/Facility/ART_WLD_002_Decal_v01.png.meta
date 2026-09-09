@@ -1,0 +1,326 @@
+fileFormatVersion: 2
+guid: 877b4a1322e3ab940bb8d1c6a9a55057
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 22668886817328597
+    second: ART_WLD_002_Decal_v01_0
+  - first:
+      213: -2807353774336141797
+    second: ART_WLD_002_Decal_v01_1
+  - first:
+      213: -8014482042951141948
+    second: ART_WLD_002_Decal_v01_2
+  - first:
+      213: -515023553680216429
+    second: ART_WLD_002_Decal_v01_3
+  - first:
+      213: -5912718645045733129
+    second: ART_WLD_002_Decal_v01_4
+  - first:
+      213: 4052152859673257191
+    second: ART_WLD_002_Decal_v01_5
+  - first:
+      213: 3171378238556357917
+    second: ART_WLD_002_Decal_v01_6
+  - first:
+      213: 4663421452250136711
+    second: ART_WLD_002_Decal_v01_7
+  - first:
+      213: -7684674711960474252
+    second: ART_WLD_002_Decal_v01_8
+  - first:
+      213: 106696381105691811
+    second: ART_WLD_002_Decal_v01_9
+  - first:
+      213: 4770114660689816328
+    second: ART_WLD_002_Decal_v01_10
+  - first:
+      213: 1008188240845033759
+    second: ART_WLD_002_Decal_v01_11
+  - first:
+      213: -4112480763853129928
+    second: ART_WLD_002_Decal_v01_12
+  - first:
+      213: 2801714213526701725
+    second: ART_WLD_002_Decal_v01_13
+  - first:
+      213: -635647288124995110
+    second: ART_WLD_002_Decal_v01_14
+  - first:
+      213: -5941069485669530885
+    second: ART_WLD_002_Decal_v01_15
+  - first:
+      213: -4858476784016925162
+    second: ART_WLD_002_Decal_v01_16
+  - first:
+      213: -2786586716607456653
+    second: ART_WLD_002_Decal_v01_17
+  - first:
+      213: 1872717966818665255
+    second: ART_WLD_002_Decal_v01_18
+  - first:
+      213: 4807040974978902997
+    second: ART_WLD_002_Decal_v01_19
+  - first:
+      213: 3470727738446136721
+    second: ART_WLD_002_Decal_v01_20
+  - first:
+      213: 8628001265911911480
+    second: ART_WLD_002_Decal_v01_21
+  - first:
+      213: -8473038434554527814
+    second: ART_WLD_002_Decal_v01_22
+  - first:
+      213: -7538046238518897688
+    second: ART_WLD_002_Decal_v01_23
+  - first:
+      213: -5547319498979562417
+    second: ART_WLD_002_Decal_v01_24
+  - first:
+      213: -2338022341301947527
+    second: ART_WLD_002_Decal_v01_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 70
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ART_WLD_002_Decal_v01_Corner
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 66
+        width: 179
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf9deea24cae4446adec43fd3d5b75f
+      internalID: 564556104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ART_WLD_002_Decal_v01_HorizontalLine
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 417
+        width: 348
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 47, y: 0, z: 145, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d02a196859cb3943b713eeb5bd472e3
+      internalID: -922057161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ART_WLD_002_Decal_v01_HorizontalSingleLine
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 311
+        width: 201
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d1db9bd608f3649995714c57c120ea
+      internalID: 2008229312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ART_WLD_002_Decal_v01_VerticalLine
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 280
+        width: 46
+        height: 195
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 76, z: 0, w: 22}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7185c66162d5c0e41a3a4768290707fb
+      internalID: 1969695738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9b1df0e07d3b0394783596933e318e2b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ART_WLD_002_Decal_v01_1: -2807353774336141797
+      ART_WLD_002_Decal_v01_10: 4770114660689816328
+      ART_WLD_002_Decal_v01_11: 1008188240845033759
+      ART_WLD_002_Decal_v01_12: -4112480763853129928
+      ART_WLD_002_Decal_v01_13: 2801714213526701725
+      ART_WLD_002_Decal_v01_14: -635647288124995110
+      ART_WLD_002_Decal_v01_15: -5941069485669530885
+      ART_WLD_002_Decal_v01_16: -4858476784016925162
+      ART_WLD_002_Decal_v01_17: -2786586716607456653
+      ART_WLD_002_Decal_v01_18: 1872717966818665255
+      ART_WLD_002_Decal_v01_19: 4807040974978902997
+      ART_WLD_002_Decal_v01_2: -8014482042951141948
+      ART_WLD_002_Decal_v01_20: 3470727738446136721
+      ART_WLD_002_Decal_v01_21: 8628001265911911480
+      ART_WLD_002_Decal_v01_22: -8473038434554527814
+      ART_WLD_002_Decal_v01_23: -7538046238518897688
+      ART_WLD_002_Decal_v01_24: -5547319498979562417
+      ART_WLD_002_Decal_v01_25: -2338022341301947527
+      ART_WLD_002_Decal_v01_3: -515023553680216429
+      ART_WLD_002_Decal_v01_4: -5912718645045733129
+      ART_WLD_002_Decal_v01_5: 4052152859673257191
+      ART_WLD_002_Decal_v01_6: 3171378238556357917
+      ART_WLD_002_Decal_v01_7: 4663421452250136711
+      ART_WLD_002_Decal_v01_8: -7684674711960474252
+      ART_WLD_002_Decal_v01_9: 106696381105691811
+      ART_WLD_002_Decal_v01_Corner: 564556104
+      ART_WLD_002_Decal_v01_HorizontalLine: -922057161
+      ART_WLD_002_Decal_v01_HorizontalSingleLine: 2008229312
+      ART_WLD_002_Decal_v01_UpRight: 557858530
+      ART_WLD_002_Decal_v01_VerticalLine: 1969695738
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

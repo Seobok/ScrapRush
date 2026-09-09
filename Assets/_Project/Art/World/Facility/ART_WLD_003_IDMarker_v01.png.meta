@@ -1,0 +1,423 @@
+fileFormatVersion: 2
+guid: 52709734133048d43b3b515def531a09
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3614775058640427320
+    second: ART_WLD_003_IDMarker_v01_0
+  - first:
+      213: 6077164856409488625
+    second: ART_WLD_003_IDMarker_v01_1
+  - first:
+      213: 4059817776714188016
+    second: ART_WLD_003_IDMarker_v01_2
+  - first:
+      213: -6557376672120600545
+    second: ART_WLD_003_IDMarker_v01_3
+  - first:
+      213: 8734883824611068463
+    second: ART_WLD_003_IDMarker_v01_4
+  - first:
+      213: -6457188581049293113
+    second: ART_WLD_003_IDMarker_v01_5
+  - first:
+      213: -4711297137489810637
+    second: ART_WLD_003_IDMarker_v01_6
+  - first:
+      213: -5375550129727386150
+    second: ART_WLD_003_IDMarker_v01_7
+  - first:
+      213: -2285107856148604040
+    second: ART_WLD_003_IDMarker_v01_8
+  - first:
+      213: -6186350763813508404
+    second: ART_WLD_003_IDMarker_v01_9
+  - first:
+      213: -1397071628436299107
+    second: ART_WLD_003_IDMarker_v01_10
+  - first:
+      213: 3536037505230498971
+    second: ART_WLD_003_IDMarker_v01_11
+  - first:
+      213: -1335264307948353004
+    second: ART_WLD_003_IDMarker_v01_12
+  - first:
+      213: 5189728008419893620
+    second: ART_WLD_003_IDMarker_v01_13
+  - first:
+      213: -3228969480303295602
+    second: ART_WLD_003_IDMarker_v01_14
+  - first:
+      213: -3300404427589214856
+    second: ART_WLD_003_IDMarker_v01_15
+  - first:
+      213: -7773239039699713582
+    second: ART_WLD_003_IDMarker_v01_16
+  - first:
+      213: -7956494853178169096
+    second: ART_WLD_003_IDMarker_v01_17
+  - first:
+      213: 1246320542713166903
+    second: ART_WLD_003_IDMarker_v01_18
+  - first:
+      213: -1303252836488115874
+    second: ART_WLD_003_IDMarker_v01_19
+  - first:
+      213: -824113280643428782
+    second: ART_WLD_003_IDMarker_v01_20
+  - first:
+      213: -2386631955323222417
+    second: ART_WLD_003_IDMarker_v01_21
+  - first:
+      213: -3831724923661596012
+    second: ART_WLD_003_IDMarker_v01_22
+  - first:
+      213: 5459088951295292587
+    second: ART_WLD_003_IDMarker_v01_23
+  - first:
+      213: 6288439209720851801
+    second: ART_WLD_003_IDMarker_v01_24
+  - first:
+      213: 3903420710646433028
+    second: ART_WLD_003_IDMarker_v01_25
+  - first:
+      213: 8027590554457029343
+    second: ART_WLD_003_IDMarker_v01_26
+  - first:
+      213: 4992443226273015272
+    second: ART_WLD_003_IDMarker_v01_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 70
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ART_WLD_003_IDMarker_v01_A1
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 814
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 839543193c24a2230800000000000000
+      internalID: 3614775058640427320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ART_WLD_003_IDMarker_v01_A2
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 828
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fc76cb1d3d665450800000000000000
+      internalID: 6077164856409488625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ART_WLD_003_IDMarker_v01_A3
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 816
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f48dd112ce575830800000000000000
+      internalID: 4059817776714188016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ART_WLD_003_IDMarker_v01_B1
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 430
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1881dfb8a48ff4a0800000000000000
+      internalID: -6557376672120600545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ART_WLD_003_IDMarker_v01_B2
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 437
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2a8f302f8a883970800000000000000
+      internalID: 8734883824611068463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ART_WLD_003_IDMarker_v01_B3
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 446
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c629da72357366a0800000000000000
+      internalID: -6457188581049293113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ART_WLD_003_IDMarker_v01_C1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 41
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33bea98073c1e9eb0800000000000000
+      internalID: -4711297137489810637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ART_WLD_003_IDMarker_v01_C2
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 42
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: add4b4d43a53665b0800000000000000
+      internalID: -5375550129727386150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ART_WLD_003_IDMarker_v01_C3
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 50
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87bdec8038aa940e0800000000000000
+      internalID: -2285107856148604040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 92e649760c9ab734f8b4c5359a505b49
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":3.0},"gridSpriteSize":{"x":418.0,"y":418.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ART_WLD_003_IDMarker_v01_A1: 3614775058640427320
+      ART_WLD_003_IDMarker_v01_A2: 6077164856409488625
+      ART_WLD_003_IDMarker_v01_A3: 4059817776714188016
+      ART_WLD_003_IDMarker_v01_B1: -6557376672120600545
+      ART_WLD_003_IDMarker_v01_B2: 8734883824611068463
+      ART_WLD_003_IDMarker_v01_B3: -6457188581049293113
+      ART_WLD_003_IDMarker_v01_C1: -4711297137489810637
+      ART_WLD_003_IDMarker_v01_C2: -5375550129727386150
+      ART_WLD_003_IDMarker_v01_C3: -2285107856148604040
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
