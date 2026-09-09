@@ -185,9 +185,9 @@ namespace ScrapRush.Editor
             foreach (var old in Object.FindObjectsByType<MiningHitEffect>(FindObjectsSortMode.None))
                 Object.DestroyImmediate(old.gameObject);
             var settings = AssetDatabase.LoadAssetAtPath<MiningSettings>("Assets/_Project/Data/MiningSettings.asset");
-            Check(settings.hitFrames.Length == 8 && settings.hitFrames.Select((s, i) =>
-                s != null && s.name == "VFX_MIN_002_MiningHit_v01_" + i && s.rect.width == 443 && s.rect.height == 443).All(x => x),
-                "MiningHit references all eight sheet frames in row order");
+            Check(settings.hitFrames.Length == 6 && settings.hitFrames.Select((s, i) =>
+                s != null && s.name == "VFX_MIN_002_MiningHit_v02_" + i && s.rect.width == 362 && s.rect.height == 362).All(x => x),
+                "MiningHit references all six sheet frames in row order");
             var miner = Object.FindFirstObjectByType<PlayerAutoMiner>();
             miner.Initialize(spawner);
             var ore = spawner.Nodes.First(n => n.Definition.kind == OreKind.Iron);
@@ -195,18 +195,35 @@ namespace ScrapRush.Editor
             miner.transform.position = position;
             var tick = typeof(PlayerAutoMiner).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
             tick.Invoke(miner, new object[] {0f});
-            var effects = Object.FindObjectsByType<MiningHitEffect>(FindObjectsSortMode.None);
+            var effects = Object.FindObjectsByType<MiningHitEffect>(FindObjectsSortMode.None).Where(e => e.name == "MiningHit").ToArray();
             Check(!ore.IsAlive && miner.HitCount == 1 && effects.Length == 1,
                 "A lethal automatic hit creates exactly one surviving hit effect");
             var effect = effects[0];
+            var breaks = Object.FindObjectsByType<MiningHitEffect>(FindObjectsSortMode.None).Where(e => e.name == "OreBreak").ToArray();
+            Check(breaks.Length == 1 && breaks[0].transform.position == position && breaks[0].transform.parent == null,
+                "Lethal hit creates one independent OreBreak at the destruction position");
+            ore.ApplyDamage(100, MiningSource.Basic);
+            Check(Object.FindObjectsByType<MiningHitEffect>(FindObjectsSortMode.None).Count(e => e.name == "OreBreak") == 1,
+                "Already broken ore never emits a second OreBreak");
+            var breakTick = typeof(MiningHitEffect).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
+            var breakRenderer = breaks[0].GetComponent<SpriteRenderer>();
+            for (int i = 0; i < 8; i++)
+            {
+                if (i > 0) breakTick.Invoke(breaks[0], new object[] {1f / 24f + 0.00001f});
+                Check(breakRenderer.sprite != null && breakRenderer.sprite.name == "VFX_ORE_001_OreBreak_v01_" + i,
+                    "OreBreak plays frame " + (i + 1));
+            }
+            breakTick.Invoke(breaks[0], new object[] {1f / 24f});
+            Check(!breakRenderer.enabled, "OreBreak finishes once and schedules cleanup");
+            Object.DestroyImmediate(breaks[0].gameObject);
             var renderer = effect.GetComponent<SpriteRenderer>();
             miner.transform.position += Vector3.right * 100;
             tick.Invoke(miner, new object[] {0.1f});
             Check(effect.transform.position == position && effect.transform.parent == null &&
-                Object.FindObjectsByType<MiningHitEffect>(FindObjectsSortMode.None).Length == 1,
+                Object.FindObjectsByType<MiningHitEffect>(FindObjectsSortMode.None).Count(e => e.name == "MiningHit") == 1,
                 "MiningHit stays at impact position and no-target cooldown creates no extra effect");
             var effectTick = typeof(MiningHitEffect).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < settings.hitFrames.Length; i++)
             {
                 if (i > 0) effectTick.Invoke(effect, new object[] {1f / 24f + 0.00001f});
                 Check(renderer.sprite == settings.hitFrames[i], "MiningHit plays frame " + (i + 1));

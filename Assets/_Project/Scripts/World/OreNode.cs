@@ -25,6 +25,10 @@ namespace ScrapRush.World
     public sealed class OreNode : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer visual;
+        [Header("Ore break effect")]
+        [SerializeField] private Sprite[] breakFrames;
+        [SerializeField, Min(1f)] private float breakFramesPerSecond = 24f;
+        [SerializeField, Min(0.1f)] private float breakSizeMultiplier = 2f;
         [Header("Mining target effect")]
         [SerializeField] private Sprite[] targetSequence;
         [SerializeField] private Sprite targetLoop;
@@ -117,6 +121,8 @@ namespace ScrapRush.World
             shape.enabled = false;
             var info = new OreBreakInfo(Definition, transform.position, source);
             gameObject.SetActive(false);
+            ScrapRush.Player.MiningHitEffect.Play(breakFrames, breakFramesPerSecond,
+                Definition.visualSize * breakSizeMultiplier, transform.position, gameObject.scene, "OreBreak", 21);
             try { Broken?.Invoke(this, info); }
             finally { Destroy(gameObject); }
             return true;

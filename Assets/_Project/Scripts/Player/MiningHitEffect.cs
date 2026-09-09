@@ -12,19 +12,22 @@ namespace ScrapRush.Player
         private float elapsed;
 
         public static void Play(MiningSettings settings, Vector3 position, float oreSize, Scene scene)
+            => Play(settings.hitFrames, settings.hitFramesPerSecond, oreSize * settings.hitSizeMultiplier, position, scene, "MiningHit", 20);
+
+        public static void Play(Sprite[] frames, float fps, float size, Vector3 position, Scene scene, string effectName, int sortingOrder)
         {
-            if (settings.hitFrames == null || settings.hitFrames.Length == 0 || settings.hitFrames[0] == null) return;
-            var instance = new GameObject("MiningHit");
+            if (frames == null || frames.Length == 0 || frames[0] == null) return;
+            var instance = new GameObject(effectName);
             SceneManager.MoveGameObjectToScene(instance, scene);
             instance.transform.position = position;
             var effect = instance.AddComponent<MiningHitEffect>();
-            effect.frames = settings.hitFrames;
-            effect.framesPerSecond = Mathf.Max(1f, settings.hitFramesPerSecond);
+            effect.frames = frames;
+            effect.framesPerSecond = Mathf.Max(1f, fps);
             effect.visual = instance.AddComponent<SpriteRenderer>();
-            effect.visual.sortingOrder = 20;
+            effect.visual.sortingOrder = sortingOrder;
             effect.visual.sprite = effect.frames[0];
             float canvasSize = Mathf.Max(effect.frames[0].rect.width, effect.frames[0].rect.height) / effect.frames[0].pixelsPerUnit;
-            instance.transform.localScale = Vector3.one * (oreSize * settings.hitSizeMultiplier / canvasSize);
+            instance.transform.localScale = Vector3.one * (size / canvasSize);
         }
 
         private void Update() => Tick(Time.deltaTime);

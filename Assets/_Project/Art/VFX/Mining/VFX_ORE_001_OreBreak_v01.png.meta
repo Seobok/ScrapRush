@@ -1,0 +1,724 @@
+fileFormatVersion: 2
+guid: a28a924dc0a110f45a2329778813674f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7096694232161947437
+    second: VFX_ORE_001_OreBreak_v01_0
+  - first:
+      213: -2284523028420861277
+    second: VFX_ORE_001_OreBreak_v01_1
+  - first:
+      213: 3770677869810853729
+    second: VFX_ORE_001_OreBreak_v01_2
+  - first:
+      213: -304941159012917123
+    second: VFX_ORE_001_OreBreak_v01_3
+  - first:
+      213: 6827533121874066500
+    second: VFX_ORE_001_OreBreak_v01_4
+  - first:
+      213: 3868382763782651829
+    second: VFX_ORE_001_OreBreak_v01_5
+  - first:
+      213: -6999725521872346109
+    second: VFX_ORE_001_OreBreak_v01_6
+  - first:
+      213: 5304835679225424927
+    second: VFX_ORE_001_OreBreak_v01_7
+  - first:
+      213: -662836449053636017
+    second: VFX_ORE_001_OreBreak_v01_8
+  - first:
+      213: -1243138416616343506
+    second: VFX_ORE_001_OreBreak_v01_9
+  - first:
+      213: 3702247234798644570
+    second: VFX_ORE_001_OreBreak_v01_10
+  - first:
+      213: -2290755032061983803
+    second: VFX_ORE_001_OreBreak_v01_11
+  - first:
+      213: 4569983539141877559
+    second: VFX_ORE_001_OreBreak_v01_12
+  - first:
+      213: 3938459385643825769
+    second: VFX_ORE_001_OreBreak_v01_13
+  - first:
+      213: 3802822715624674473
+    second: VFX_ORE_001_OreBreak_v01_14
+  - first:
+      213: 1748946559896929995
+    second: VFX_ORE_001_OreBreak_v01_15
+  - first:
+      213: -1735884589767850591
+    second: VFX_ORE_001_OreBreak_v01_16
+  - first:
+      213: -6780131586742801596
+    second: VFX_ORE_001_OreBreak_v01_17
+  - first:
+      213: 6857805522409618003
+    second: VFX_ORE_001_OreBreak_v01_18
+  - first:
+      213: -6546952230563296110
+    second: VFX_ORE_001_OreBreak_v01_19
+  - first:
+      213: 8575786148476016207
+    second: VFX_ORE_001_OreBreak_v01_20
+  - first:
+      213: -261905384376040532
+    second: VFX_ORE_001_OreBreak_v01_21
+  - first:
+      213: -8445284691884878079
+    second: VFX_ORE_001_OreBreak_v01_22
+  - first:
+      213: 6548505359138855791
+    second: VFX_ORE_001_OreBreak_v01_23
+  - first:
+      213: -8627827832761340661
+    second: VFX_ORE_001_OreBreak_v01_24
+  - first:
+      213: 2987032477787095497
+    second: VFX_ORE_001_OreBreak_v01_25
+  - first:
+      213: 8573015903384749960
+    second: VFX_ORE_001_OreBreak_v01_26
+  - first:
+      213: 1938274430764998908
+    second: VFX_ORE_001_OreBreak_v01_27
+  - first:
+      213: -5314629408538171346
+    second: VFX_ORE_001_OreBreak_v01_28
+  - first:
+      213: 7790569218134064638
+    second: VFX_ORE_001_OreBreak_v01_29
+  - first:
+      213: -5614733112126547660
+    second: VFX_ORE_001_OreBreak_v01_30
+  - first:
+      213: -681162093872630302
+    second: VFX_ORE_001_OreBreak_v01_31
+  - first:
+      213: 7493321934959113748
+    second: VFX_ORE_001_OreBreak_v01_32
+  - first:
+      213: 7081887500344049886
+    second: VFX_ORE_001_OreBreak_v01_33
+  - first:
+      213: -7851575897485585789
+    second: VFX_ORE_001_OreBreak_v01_34
+  - first:
+      213: 6114224876151998546
+    second: VFX_ORE_001_OreBreak_v01_35
+  - first:
+      213: 2318346595469196004
+    second: VFX_ORE_001_OreBreak_v01_36
+  - first:
+      213: 1778996615818232835
+    second: VFX_ORE_001_OreBreak_v01_37
+  - first:
+      213: 476149185903995135
+    second: VFX_ORE_001_OreBreak_v01_38
+  - first:
+      213: 7313673347680126935
+    second: VFX_ORE_001_OreBreak_v01_39
+  - first:
+      213: -9143809917488514488
+    second: VFX_ORE_001_OreBreak_v01_40
+  - first:
+      213: -3660816862726492988
+    second: VFX_ORE_001_OreBreak_v01_41
+  - first:
+      213: -3356497475919062608
+    second: VFX_ORE_001_OreBreak_v01_42
+  - first:
+      213: -2316018932812420414
+    second: VFX_ORE_001_OreBreak_v01_43
+  - first:
+      213: -7947352481124966833
+    second: VFX_ORE_001_OreBreak_v01_44
+  - first:
+      213: 3487255019085950873
+    second: VFX_ORE_001_OreBreak_v01_45
+  - first:
+      213: -6371735732974528008
+    second: VFX_ORE_001_OreBreak_v01_46
+  - first:
+      213: -1670588811710863317
+    second: VFX_ORE_001_OreBreak_v01_47
+  - first:
+      213: 1169917590665231350
+    second: VFX_ORE_001_OreBreak_v01_48
+  - first:
+      213: -2063999661030148214
+    second: VFX_ORE_001_OreBreak_v01_49
+  - first:
+      213: 6217946700416726706
+    second: VFX_ORE_001_OreBreak_v01_50
+  - first:
+      213: 8407878434609014248
+    second: VFX_ORE_001_OreBreak_v01_51
+  - first:
+      213: 2348317260876252132
+    second: VFX_ORE_001_OreBreak_v01_52
+  - first:
+      213: 7222041816400715420
+    second: VFX_ORE_001_OreBreak_v01_53
+  - first:
+      213: -7058590303220065729
+    second: VFX_ORE_001_OreBreak_v01_54
+  - first:
+      213: 6354189901924411749
+    second: VFX_ORE_001_OreBreak_v01_55
+  - first:
+      213: 548433945474629054
+    second: VFX_ORE_001_OreBreak_v01_56
+  - first:
+      213: -7533116387053284125
+    second: VFX_ORE_001_OreBreak_v01_57
+  - first:
+      213: 8578313385335568394
+    second: VFX_ORE_001_OreBreak_v01_58
+  - first:
+      213: -6235131321457624055
+    second: VFX_ORE_001_OreBreak_v01_59
+  - first:
+      213: -4165227334427796267
+    second: VFX_ORE_001_OreBreak_v01_60
+  - first:
+      213: -3062558563854904032
+    second: VFX_ORE_001_OreBreak_v01_61
+  - first:
+      213: -7357922789416650211
+    second: VFX_ORE_001_OreBreak_v01_62
+  - first:
+      213: -385446797655698368
+    second: VFX_ORE_001_OreBreak_v01_63
+  - first:
+      213: -4378561462591524773
+    second: VFX_ORE_001_OreBreak_v01_64
+  - first:
+      213: -847032221170695450
+    second: VFX_ORE_001_OreBreak_v01_65
+  - first:
+      213: -7092171408617937631
+    second: VFX_ORE_001_OreBreak_v01_66
+  - first:
+      213: -5755218568439974735
+    second: VFX_ORE_001_OreBreak_v01_67
+  - first:
+      213: 8098125088678165364
+    second: VFX_ORE_001_OreBreak_v01_68
+  - first:
+      213: 6940417174862172233
+    second: VFX_ORE_001_OreBreak_v01_69
+  - first:
+      213: 9024616384819765886
+    second: VFX_ORE_001_OreBreak_v01_70
+  - first:
+      213: 6496131772857138025
+    second: VFX_ORE_001_OreBreak_v01_71
+  - first:
+      213: 8905704792576344788
+    second: VFX_ORE_001_OreBreak_v01_72
+  - first:
+      213: 8341249245413271751
+    second: VFX_ORE_001_OreBreak_v01_73
+  - first:
+      213: 4320490101453335563
+    second: VFX_ORE_001_OreBreak_v01_74
+  - first:
+      213: 538071956585385424
+    second: VFX_ORE_001_OreBreak_v01_75
+  - first:
+      213: -2422283149481128290
+    second: VFX_ORE_001_OreBreak_v01_76
+  - first:
+      213: 1119057246270809405
+    second: VFX_ORE_001_OreBreak_v01_77
+  - first:
+      213: 704505932362327766
+    second: VFX_ORE_001_OreBreak_v01_78
+  - first:
+      213: -137335994762178040
+    second: VFX_ORE_001_OreBreak_v01_79
+  - first:
+      213: -4896366455911788953
+    second: VFX_ORE_001_OreBreak_v01_80
+  - first:
+      213: 7072307149120474271
+    second: VFX_ORE_001_OreBreak_v01_81
+  - first:
+      213: -4730067136616521109
+    second: VFX_ORE_001_OreBreak_v01_82
+  - first:
+      213: 9174878309664069740
+    second: VFX_ORE_001_OreBreak_v01_83
+  - first:
+      213: -7460560583569983248
+    second: VFX_ORE_001_OreBreak_v01_84
+  - first:
+      213: 2058538064795715305
+    second: VFX_ORE_001_OreBreak_v01_85
+  - first:
+      213: 3292753459747467383
+    second: VFX_ORE_001_OreBreak_v01_86
+  - first:
+      213: 6576168999993949450
+    second: VFX_ORE_001_OreBreak_v01_87
+  - first:
+      213: -510699793981606426
+    second: VFX_ORE_001_OreBreak_v01_88
+  - first:
+      213: -6630993873788567666
+    second: VFX_ORE_001_OreBreak_v01_89
+  - first:
+      213: -280320317650170155
+    second: VFX_ORE_001_OreBreak_v01_90
+  - first:
+      213: 7570182841916621786
+    second: VFX_ORE_001_OreBreak_v01_91
+  - first:
+      213: 7286373441816820103
+    second: VFX_ORE_001_OreBreak_v01_92
+  - first:
+      213: -7859462036441084526
+    second: VFX_ORE_001_OreBreak_v01_93
+  - first:
+      213: 2073953129143813999
+    second: VFX_ORE_001_OreBreak_v01_94
+  - first:
+      213: -2053466816915770589
+    second: VFX_ORE_001_OreBreak_v01_95
+  - first:
+      213: 7823120762264320919
+    second: VFX_ORE_001_OreBreak_v01_96
+  - first:
+      213: -4742114934500436721
+    second: VFX_ORE_001_OreBreak_v01_97
+  - first:
+      213: 8175869786317229233
+    second: VFX_ORE_001_OreBreak_v01_98
+  - first:
+      213: 6526012236316144900
+    second: VFX_ORE_001_OreBreak_v01_99
+  - first:
+      213: -3190137434700101565
+    second: VFX_ORE_001_OreBreak_v01_100
+  - first:
+      213: 5256362597705683768
+    second: VFX_ORE_001_OreBreak_v01_101
+  - first:
+      213: -951593439907957394
+    second: VFX_ORE_001_OreBreak_v01_102
+  - first:
+      213: 7513518557452627427
+    second: VFX_ORE_001_OreBreak_v01_103
+  - first:
+      213: 7823058687300206980
+    second: VFX_ORE_001_OreBreak_v01_104
+  - first:
+      213: -8150228463580552677
+    second: VFX_ORE_001_OreBreak_v01_105
+  - first:
+      213: -733511330416164101
+    second: VFX_ORE_001_OreBreak_v01_106
+  - first:
+      213: 7889241990847899321
+    second: VFX_ORE_001_OreBreak_v01_107
+  - first:
+      213: 8570757353762782687
+    second: VFX_ORE_001_OreBreak_v01_108
+  - first:
+      213: 7716715178118028711
+    second: VFX_ORE_001_OreBreak_v01_109
+  - first:
+      213: 4484827839999450699
+    second: VFX_ORE_001_OreBreak_v01_110
+  - first:
+      213: -2007123068824349499
+    second: VFX_ORE_001_OreBreak_v01_111
+  - first:
+      213: -6016601910088925884
+    second: VFX_ORE_001_OreBreak_v01_112
+  - first:
+      213: -5050797768362164597
+    second: VFX_ORE_001_OreBreak_v01_113
+  - first:
+      213: -7756624293013882777
+    second: VFX_ORE_001_OreBreak_v01_114
+  - first:
+      213: -1421746827575142953
+    second: VFX_ORE_001_OreBreak_v01_115
+  - first:
+      213: 2335957270585273093
+    second: VFX_ORE_001_OreBreak_v01_116
+  - first:
+      213: 5909477834305085987
+    second: VFX_ORE_001_OreBreak_v01_117
+  - first:
+      213: 1002597442739081372
+    second: VFX_ORE_001_OreBreak_v01_118
+  - first:
+      213: 7369197122656977379
+    second: VFX_ORE_001_OreBreak_v01_119
+  - first:
+      213: -8696914372200675663
+    second: VFX_ORE_001_OreBreak_v01_120
+  - first:
+      213: -5202886868897195998
+    second: VFX_ORE_001_OreBreak_v01_121
+  - first:
+      213: -2793614278437988868
+    second: VFX_ORE_001_OreBreak_v01_122
+  - first:
+      213: -6360527387512173820
+    second: VFX_ORE_001_OreBreak_v01_123
+  - first:
+      213: -9113012116686900357
+    second: VFX_ORE_001_OreBreak_v01_124
+  - first:
+      213: 2518343390392774049
+    second: VFX_ORE_001_OreBreak_v01_125
+  - first:
+      213: 1956763778507560591
+    second: VFX_ORE_001_OreBreak_v01_126
+  - first:
+      213: -1786287825080571225
+    second: VFX_ORE_001_OreBreak_v01_127
+  - first:
+      213: -2384392816229081440
+    second: VFX_ORE_001_OreBreak_v01_128
+  - first:
+      213: -5120381235227655683
+    second: VFX_ORE_001_OreBreak_v01_129
+  - first:
+      213: -8441220152538553698
+    second: VFX_ORE_001_OreBreak_v01_130
+  - first:
+      213: 1542113100073485688
+    second: VFX_ORE_001_OreBreak_v01_131
+  - first:
+      213: -6707135431704464287
+    second: VFX_ORE_001_OreBreak_v01_132
+  - first:
+      213: 698097263587476541
+    second: VFX_ORE_001_OreBreak_v01_133
+  - first:
+      213: 3132612358712580946
+    second: VFX_ORE_001_OreBreak_v01_134
+  - first:
+      213: -5181457992650858297
+    second: VFX_ORE_001_OreBreak_v01_135
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 70
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VFX_ORE_001_OreBreak_v01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 444
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f8393edc58c7260800000000000000
+      internalID: 7096694232161947437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_ORE_001_OreBreak_v01_1
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 444
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a266c9d86ebb40e0800000000000000
+      internalID: -2284523028420861277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_ORE_001_OreBreak_v01_2
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 444
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 167a0807b83245430800000000000000
+      internalID: 3770677869810853729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_ORE_001_OreBreak_v01_3
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 444
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d70a3aba1a1a4cbf0800000000000000
+      internalID: -304941159012917123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_ORE_001_OreBreak_v01_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c7485533540ce50800000000000000
+      internalID: 6827533121874066500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_ORE_001_OreBreak_v01_5
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf328ac0a14fa530800000000000000
+      internalID: 3868382763782651829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_ORE_001_OreBreak_v01_6
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 1
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 304209759bafbde90800000000000000
+      internalID: -6999725521872346109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_ORE_001_OreBreak_v01_7
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 1
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1cac0ca1ff8e9940800000000000000
+      internalID: 5304835679225424927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 8d8f4ef455590084695430e78d488744
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":443.0,"y":443.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      VFX_ORE_001_OreBreak_v01_0: 7096694232161947437
+      VFX_ORE_001_OreBreak_v01_1: -2284523028420861277
+      VFX_ORE_001_OreBreak_v01_2: 3770677869810853729
+      VFX_ORE_001_OreBreak_v01_3: -304941159012917123
+      VFX_ORE_001_OreBreak_v01_4: 6827533121874066500
+      VFX_ORE_001_OreBreak_v01_5: 3868382763782651829
+      VFX_ORE_001_OreBreak_v01_6: -6999725521872346109
+      VFX_ORE_001_OreBreak_v01_7: 5304835679225424927
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

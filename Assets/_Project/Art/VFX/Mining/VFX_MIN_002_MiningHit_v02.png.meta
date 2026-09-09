@@ -1,34 +1,43 @@
 fileFormatVersion: 2
-guid: 50105eba8c073ec4b9c87026928556aa
+guid: 8637a78168a25b0428ac0537c17d75c4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4791902033655246917
-    second: VFX_MIN_001_AutoMiningTarget_02_v01_0
+      213: -8138625745912652868
+    second: VFX_MIN_002_MiningHit_v02_0
   - first:
-      213: -732879989287197226
-    second: VFX_MIN_001_AutoMiningTarget_02_v01_1
+      213: -6980603702147605108
+    second: VFX_MIN_002_MiningHit_v02_1
   - first:
-      213: 5540054704133876482
-    second: VFX_MIN_001_AutoMiningTarget_02_v01_2
+      213: -731055114614053371
+    second: VFX_MIN_002_MiningHit_v02_2
   - first:
-      213: 8695420909694558414
-    second: VFX_MIN_001_AutoMiningTarget_02_v01_3
+      213: -1039033741354833749
+    second: VFX_MIN_002_MiningHit_v02_3
   - first:
-      213: -4031103059213507282
-    second: VFX_MIN_001_AutoMiningTarget_02_v01_4
+      213: 7453162027848395736
+    second: VFX_MIN_002_MiningHit_v02_4
   - first:
-      213: -6478220503752687563
-    second: VFX_MIN_001_AutoMiningTarget_02_v01_5
+      213: 2345073126848402748
+    second: VFX_MIN_002_MiningHit_v02_5
   - first:
-      213: 8471601459800406800
-    second: VFX_MIN_001_AutoMiningTarget_02_v01_6
+      213: -949681177528889453
+    second: VFX_MIN_002_MiningHit_v02_6
   - first:
-      213: -8124756781660152080
-    second: VFX_MIN_001_AutoMiningTarget_02_v01_7
+      213: 4764878652698475050
+    second: VFX_MIN_002_MiningHit_v02_7
   - first:
-      213: -9136623092910265823
-    second: VFX_MIN_001_AutoMiningTarget_02_v01_8
+      213: -3283181064215558794
+    second: VFX_MIN_002_MiningHit_v02_8
+  - first:
+      213: -2026922900938177233
+    second: VFX_MIN_002_MiningHit_v02_9
+  - first:
+      213: 20007145408237551
+    second: VFX_MIN_002_MiningHit_v02_10
+  - first:
+      213: -6622356398502637907
+    second: VFX_MIN_002_MiningHit_v02_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +67,7 @@ TextureImporter:
   cubemapConvolution: 0
   seamlessCubemap: 0
   textureFormat: 1
-  maxTextureSize: 2048
+  maxTextureSize: 4096
   textureSettings:
     serializedVersion: 2
     filterMode: 0
@@ -70,7 +79,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -96,7 +105,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -109,7 +118,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Standalone
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -122,7 +131,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -137,199 +146,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: VFX_MIN_001_AutoMiningTarget_02_v01_0
+      name: VFX_MIN_002_MiningHit_v02_0
       rect:
         serializedVersion: 2
-        x: 76
-        y: 131
-        width: 38
-        height: 39
+        x: 0
+        y: 181
+        width: 362
+        height: 362
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5403e72d281408240800000000000000
-      internalID: 4791902033655246917
+      spriteID: cbb170f110bcd0f80800000000000000
+      internalID: -8138625745912652868
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VFX_MIN_001_AutoMiningTarget_02_v01_1
+      name: VFX_MIN_002_MiningHit_v02_1
       rect:
         serializedVersion: 2
-        x: 118
-        y: 161
-        width: 21
-        height: 26
+        x: 362
+        y: 181
+        width: 362
+        height: 362
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d56b8f588944d5f0800000000000000
-      internalID: -732879989287197226
+      spriteID: c8d17bfeae9ef1f90800000000000000
+      internalID: -6980603702147605108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VFX_MIN_001_AutoMiningTarget_02_v01_2
+      name: VFX_MIN_002_MiningHit_v02_2
       rect:
         serializedVersion: 2
-        x: 142
-        y: 132
-        width: 43
-        height: 39
+        x: 724
+        y: 181
+        width: 362
+        height: 362
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 20ba124a66a32ec40800000000000000
-      internalID: 5540054704133876482
+      spriteID: 506623e1f35cad5f0800000000000000
+      internalID: -731055114614053371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VFX_MIN_001_AutoMiningTarget_02_v01_3
+      name: VFX_MIN_002_MiningHit_v02_3
       rect:
         serializedVersion: 2
-        x: 61
-        y: 109
-        width: 28
-        height: 22
+        x: 1086
+        y: 181
+        width: 362
+        height: 362
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec029de3f375ca870800000000000000
-      internalID: 8695420909694558414
+      spriteID: ba866e8315c9491f0800000000000000
+      internalID: -1039033741354833749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VFX_MIN_001_AutoMiningTarget_02_v01_4
+      name: VFX_MIN_002_MiningHit_v02_4
       rect:
         serializedVersion: 2
-        x: 95
-        y: 84
-        width: 69
-        height: 33
+        x: 1448
+        y: 181
+        width: 362
+        height: 362
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e25a6961025ae08c0800000000000000
-      internalID: -4031103059213507282
+      spriteID: 8db65533063fe6760800000000000000
+      internalID: 7453162027848395736
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: VFX_MIN_001_AutoMiningTarget_02_v01_5
+      name: VFX_MIN_002_MiningHit_v02_5
       rect:
         serializedVersion: 2
-        x: 168
-        y: 109
-        width: 30
-        height: 22
+        x: 1810
+        y: 181
+        width: 362
+        height: 362
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5304b2166ccb816a0800000000000000
-      internalID: -6478220503752687563
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VFX_MIN_001_AutoMiningTarget_02_v01_6
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 67
-        width: 39
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 01b751aa4ac219570800000000000000
-      internalID: 8471601459800406800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VFX_MIN_001_AutoMiningTarget_02_v01_7
-      rect:
-        serializedVersion: 2
-        x: 115
-        y: 52
-        width: 25
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0fe53bef0c01f3f80800000000000000
-      internalID: -8124756781660152080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: VFX_MIN_001_AutoMiningTarget_02_v01_8
-      rect:
-        serializedVersion: 2
-        x: 142
-        y: 67
-        width: 41
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 12ae37474b1343180800000000000000
-      internalID: -9136623092910265823
+      spriteID: c351d1a859f5b8020800000000000000
+      internalID: 2345073126848402748
       vertices: []
       indices: 
       edges: []
@@ -338,7 +281,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 5bdd2acbd6bea624ea27e201a3087c4c
     internalID: 0
     vertices: []
     indices: 
@@ -346,17 +289,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":362.0,"y":724.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      VFX_MIN_001_AutoMiningTarget_02_v01_0: 4791902033655246917
-      VFX_MIN_001_AutoMiningTarget_02_v01_1: -732879989287197226
-      VFX_MIN_001_AutoMiningTarget_02_v01_2: 5540054704133876482
-      VFX_MIN_001_AutoMiningTarget_02_v01_3: 8695420909694558414
-      VFX_MIN_001_AutoMiningTarget_02_v01_4: -4031103059213507282
-      VFX_MIN_001_AutoMiningTarget_02_v01_5: -6478220503752687563
-      VFX_MIN_001_AutoMiningTarget_02_v01_6: 8471601459800406800
-      VFX_MIN_001_AutoMiningTarget_02_v01_7: -8124756781660152080
-      VFX_MIN_001_AutoMiningTarget_02_v01_8: -9136623092910265823
+      VFX_MIN_002_MiningHit_v02_0: -8138625745912652868
+      VFX_MIN_002_MiningHit_v02_1: -6980603702147605108
+      VFX_MIN_002_MiningHit_v02_2: -731055114614053371
+      VFX_MIN_002_MiningHit_v02_3: -1039033741354833749
+      VFX_MIN_002_MiningHit_v02_4: 7453162027848395736
+      VFX_MIN_002_MiningHit_v02_5: 2345073126848402748
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
