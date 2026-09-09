@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ecb65676b385475935b97ae7d72e912, type: 3}
+  m_Name: OreSpawnSettings
+  m_EditorClassIdentifier: 
+  ores:
+  - definition: {fileID: 11400000, guid: 394575c2d23a5977a0dc3ac7888d4d95, type: 2}
+    weight: 60
+  - definition: {fileID: 11400000, guid: ead25d5fb3e35aa3ad32756cff3f733c, type: 2}
+    weight: 27
+  - definition: {fileID: 11400000, guid: 148b368f20255535b71c745d88ea5da1, type: 2}
+    weight: 10
+  - definition: {fileID: 11400000, guid: d113beead1ca5eb4a0509045fb2b87bc, type: 2}
+    weight: 3
+  seed: 903
+  minClusters: 2
+  maxClusters: 4
+  minOresPerCluster: 7
+  maxOresPerCluster: 12
+  clusterRadius: 2.5
+  sectorMargin: 1.2
+  spacing: 0.12
+  placementAttempts: 40

@@ -387,6 +387,8 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 6d9931d12fb940c68e846904396dfa99, type: 2}
   playerPrefab: {fileID: 1003, guid: bd2be901ef2f4ddda79b9f096abc1a0b, type: 3}
   sectorPrefab: {fileID: 1003, guid: 65e2a7cc1ee846c8ade004a2ddc38bd6, type: 3}
+  orePrefab: {fileID: 1003, guid: c19e313cefe95b5bb1f7b737b7dc9b3f, type: 3}
+  oreSpawnSettings: {fileID: 11400000, guid: bd3802616a9652e7be71dd6bc1ff8554, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
