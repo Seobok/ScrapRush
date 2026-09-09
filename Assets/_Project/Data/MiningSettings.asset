@@ -15,3 +15,14 @@ MonoBehaviour:
   range: 1.4
   interval: 0.5
   damage: 1
+  hitFrames:
+  - {fileID: -7986879085825374371, guid: 7b94f2a7e55ff0a4a93764ec9b6bf124, type: 3}
+  - {fileID: -1837821762021533575, guid: 7b94f2a7e55ff0a4a93764ec9b6bf124, type: 3}
+  - {fileID: -1033679695246863891, guid: 7b94f2a7e55ff0a4a93764ec9b6bf124, type: 3}
+  - {fileID: 5604540692469939642, guid: 7b94f2a7e55ff0a4a93764ec9b6bf124, type: 3}
+  - {fileID: -5611178583388150279, guid: 7b94f2a7e55ff0a4a93764ec9b6bf124, type: 3}
+  - {fileID: -1871301575166670672, guid: 7b94f2a7e55ff0a4a93764ec9b6bf124, type: 3}
+  - {fileID: 3356621624125765790, guid: 7b94f2a7e55ff0a4a93764ec9b6bf124, type: 3}
+  - {fileID: -3793585013264989044, guid: 7b94f2a7e55ff0a4a93764ec9b6bf124, type: 3}
+  hitFramesPerSecond: 24
+  hitSizeMultiplier: 1.6

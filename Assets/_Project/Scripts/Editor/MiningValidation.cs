@@ -44,6 +44,8 @@ namespace ScrapRush.Editor
             try
             {
                 Validate(spawner);
+                ValidateTargetEffect();
+                ValidateMiningHit(spawner);
                 ValidateScrap(spawner);
                 File.WriteAllLines(Path.Combine(Root, "mining-validation.txt"), Passed);
                 Debug.Log("MINING VALIDATION PASSED: " + Passed.Count);
@@ -178,6 +180,73 @@ namespace ScrapRush.Editor
             Object.DestroyImmediate(aPhysics.gameObject);
             Object.DestroyImmediate(bPhysics.gameObject);
         }
+        private static void ValidateMiningHit(OreSpawner spawner)
+        {
+            foreach (var old in Object.FindObjectsByType<MiningHitEffect>(FindObjectsSortMode.None))
+                Object.DestroyImmediate(old.gameObject);
+            var settings = AssetDatabase.LoadAssetAtPath<MiningSettings>("Assets/_Project/Data/MiningSettings.asset");
+            Check(settings.hitFrames.Length == 8 && settings.hitFrames.Select((s, i) =>
+                s != null && s.name == "VFX_MIN_002_MiningHit_v01_" + i && s.rect.width == 443 && s.rect.height == 443).All(x => x),
+                "MiningHit references all eight sheet frames in row order");
+            var miner = Object.FindFirstObjectByType<PlayerAutoMiner>();
+            miner.Initialize(spawner);
+            var ore = spawner.Nodes.First(n => n.Definition.kind == OreKind.Iron);
+            Vector3 position = ore.transform.position;
+            miner.transform.position = position;
+            var tick = typeof(PlayerAutoMiner).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
+            tick.Invoke(miner, new object[] {0f});
+            var effects = Object.FindObjectsByType<MiningHitEffect>(FindObjectsSortMode.None);
+            Check(!ore.IsAlive && miner.HitCount == 1 && effects.Length == 1,
+                "A lethal automatic hit creates exactly one surviving hit effect");
+            var effect = effects[0];
+            var renderer = effect.GetComponent<SpriteRenderer>();
+            miner.transform.position += Vector3.right * 100;
+            tick.Invoke(miner, new object[] {0.1f});
+            Check(effect.transform.position == position && effect.transform.parent == null &&
+                Object.FindObjectsByType<MiningHitEffect>(FindObjectsSortMode.None).Length == 1,
+                "MiningHit stays at impact position and no-target cooldown creates no extra effect");
+            var effectTick = typeof(MiningHitEffect).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
+            for (int i = 0; i < 8; i++)
+            {
+                if (i > 0) effectTick.Invoke(effect, new object[] {1f / 24f + 0.00001f});
+                Check(renderer.sprite == settings.hitFrames[i], "MiningHit plays frame " + (i + 1));
+            }
+            Check(renderer.color.a < 1, "MiningHit fades its final glow");
+            effectTick.Invoke(effect, new object[] {1f / 24f});
+            Check(!renderer.enabled, "MiningHit stops after one playback and schedules cleanup");
+            Object.DestroyImmediate(effect.gameObject);
+        }
+
+        private static void ValidateTargetEffect()
+        {
+            var prefab = AssetDatabase.LoadAssetAtPath<OreNode>("Assets/_Project/Prefabs/World/Ore.prefab");
+            var settings = AssetDatabase.LoadAssetAtPath<OreSpawnSettings>("Assets/_Project/Data/OreSpawnSettings.asset");
+            var node = Object.Instantiate(prefab, new Vector3(200, 200, 0), Quaternion.identity);
+            node.Initialize(settings.ores[3].definition);
+            node.SetSelected(true);
+            var effect = node.transform.Find("MiningTarget").GetComponent<SpriteRenderer>();
+            var update = typeof(OreNode).GetMethod("UpdateTargetEffect", BindingFlags.Instance | BindingFlags.NonPublic);
+            for (int i = 0; i < 8; i++)
+            {
+                if (i > 0) update.Invoke(node, new object[] {1f / 24f + 0.00001f});
+                Check(effect.enabled && effect.sprite != null && effect.sprite.name.Contains("_0" + (i + 1) + "_v01") &&
+                    effect.sprite.rect.width == 256 && effect.sprite.rect.height == 256,
+                    "Target acquisition frame " + (i + 1) + " resolves as a full centered sprite");
+            }
+            update.Invoke(node, new object[] {1f / 24f});
+            Check(effect.sprite != null && effect.sprite.name.Contains("Loop"), "Acquisition transitions to Loop sprite");
+            Vector3 scale = effect.transform.localScale;
+            update.Invoke(node, new object[] {0.45f});
+            Check(effect.transform.localScale.x > scale.x && effect.color.a < 1,
+                "Loop pulses in scale and opacity");
+            node.SetSelected(false);
+            Check(!effect.enabled, "Deselect hides the target effect immediately");
+            node.SetSelected(true);
+            Check(effect.enabled && effect.sprite.name.Contains("_01_v01"), "Reacquisition restarts Sequence");
+            node.ApplyDamage(100, MiningSource.Basic);
+            Check(!effect.enabled, "Ore break hides the target effect immediately");
+        }
+
         private static void ValidateScrap(OreSpawner ores)
         {
             var scraps = Object.FindFirstObjectByType<ScrapSystem>();

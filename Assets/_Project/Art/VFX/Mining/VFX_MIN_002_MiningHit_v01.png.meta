@@ -1,0 +1,532 @@
+fileFormatVersion: 2
+guid: 7b94f2a7e55ff0a4a93764ec9b6bf124
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7986879085825374371
+    second: VFX_MIN_002_MiningHit_v01_0
+  - first:
+      213: -1837821762021533575
+    second: VFX_MIN_002_MiningHit_v01_1
+  - first:
+      213: -1033679695246863891
+    second: VFX_MIN_002_MiningHit_v01_2
+  - first:
+      213: 5604540692469939642
+    second: VFX_MIN_002_MiningHit_v01_3
+  - first:
+      213: -5611178583388150279
+    second: VFX_MIN_002_MiningHit_v01_4
+  - first:
+      213: -1871301575166670672
+    second: VFX_MIN_002_MiningHit_v01_5
+  - first:
+      213: 3356621624125765790
+    second: VFX_MIN_002_MiningHit_v01_6
+  - first:
+      213: -3793585013264989044
+    second: VFX_MIN_002_MiningHit_v01_7
+  - first:
+      213: 9006781901263816640
+    second: VFX_MIN_002_MiningHit_v01_8
+  - first:
+      213: 9107102689311763007
+    second: VFX_MIN_002_MiningHit_v01_9
+  - first:
+      213: -5120822318869057592
+    second: VFX_MIN_002_MiningHit_v01_10
+  - first:
+      213: -6747465533333615623
+    second: VFX_MIN_002_MiningHit_v01_11
+  - first:
+      213: 7432123914622202228
+    second: VFX_MIN_002_MiningHit_v01_12
+  - first:
+      213: 3345947843736538734
+    second: VFX_MIN_002_MiningHit_v01_13
+  - first:
+      213: 1037099431474986275
+    second: VFX_MIN_002_MiningHit_v01_14
+  - first:
+      213: 4676332916105656639
+    second: VFX_MIN_002_MiningHit_v01_15
+  - first:
+      213: -3585978875248421778
+    second: VFX_MIN_002_MiningHit_v01_16
+  - first:
+      213: -8323200089252931331
+    second: VFX_MIN_002_MiningHit_v01_17
+  - first:
+      213: 2965478256310941485
+    second: VFX_MIN_002_MiningHit_v01_18
+  - first:
+      213: -8502005222022981575
+    second: VFX_MIN_002_MiningHit_v01_19
+  - first:
+      213: -7219754060731660494
+    second: VFX_MIN_002_MiningHit_v01_20
+  - first:
+      213: -7675710117663870997
+    second: VFX_MIN_002_MiningHit_v01_21
+  - first:
+      213: -5448560854357653443
+    second: VFX_MIN_002_MiningHit_v01_22
+  - first:
+      213: -4563010913603570337
+    second: VFX_MIN_002_MiningHit_v01_23
+  - first:
+      213: -3650044566933647652
+    second: VFX_MIN_002_MiningHit_v01_24
+  - first:
+      213: -930592405716952051
+    second: VFX_MIN_002_MiningHit_v01_25
+  - first:
+      213: 6508576090072345195
+    second: VFX_MIN_002_MiningHit_v01_26
+  - first:
+      213: -5622040928978368039
+    second: VFX_MIN_002_MiningHit_v01_27
+  - first:
+      213: -980510992297319267
+    second: VFX_MIN_002_MiningHit_v01_28
+  - first:
+      213: 4372577894318703759
+    second: VFX_MIN_002_MiningHit_v01_29
+  - first:
+      213: 5110970513949669686
+    second: VFX_MIN_002_MiningHit_v01_30
+  - first:
+      213: -2749718111818346773
+    second: VFX_MIN_002_MiningHit_v01_31
+  - first:
+      213: -2024399685030776167
+    second: VFX_MIN_002_MiningHit_v01_32
+  - first:
+      213: -4085322480898984938
+    second: VFX_MIN_002_MiningHit_v01_33
+  - first:
+      213: -8592896108811628359
+    second: VFX_MIN_002_MiningHit_v01_34
+  - first:
+      213: 9168002385851796236
+    second: VFX_MIN_002_MiningHit_v01_35
+  - first:
+      213: 5924221795090444635
+    second: VFX_MIN_002_MiningHit_v01_36
+  - first:
+      213: -3024657737339507578
+    second: VFX_MIN_002_MiningHit_v01_37
+  - first:
+      213: 6554380322723948825
+    second: VFX_MIN_002_MiningHit_v01_38
+  - first:
+      213: -5735836260297504413
+    second: VFX_MIN_002_MiningHit_v01_39
+  - first:
+      213: 1773779054300675688
+    second: VFX_MIN_002_MiningHit_v01_40
+  - first:
+      213: -7710961751313152271
+    second: VFX_MIN_002_MiningHit_v01_41
+  - first:
+      213: -7651270149061193267
+    second: VFX_MIN_002_MiningHit_v01_42
+  - first:
+      213: -389625351919857024
+    second: VFX_MIN_002_MiningHit_v01_43
+  - first:
+      213: 7423430985727554210
+    second: VFX_MIN_002_MiningHit_v01_44
+  - first:
+      213: 1642678059763430574
+    second: VFX_MIN_002_MiningHit_v01_45
+  - first:
+      213: 5506790134700005685
+    second: VFX_MIN_002_MiningHit_v01_46
+  - first:
+      213: -8740599386143444996
+    second: VFX_MIN_002_MiningHit_v01_47
+  - first:
+      213: -5821559094187076708
+    second: VFX_MIN_002_MiningHit_v01_48
+  - first:
+      213: -2682938477741784084
+    second: VFX_MIN_002_MiningHit_v01_49
+  - first:
+      213: -1852616418555097667
+    second: VFX_MIN_002_MiningHit_v01_50
+  - first:
+      213: 4089784445964489361
+    second: VFX_MIN_002_MiningHit_v01_51
+  - first:
+      213: -7662934192730998381
+    second: VFX_MIN_002_MiningHit_v01_52
+  - first:
+      213: -4032796524405824777
+    second: VFX_MIN_002_MiningHit_v01_53
+  - first:
+      213: -7200354956592650073
+    second: VFX_MIN_002_MiningHit_v01_54
+  - first:
+      213: -2969583073339835975
+    second: VFX_MIN_002_MiningHit_v01_55
+  - first:
+      213: -6499253566391942000
+    second: VFX_MIN_002_MiningHit_v01_56
+  - first:
+      213: -5721017696898596032
+    second: VFX_MIN_002_MiningHit_v01_57
+  - first:
+      213: -6847983332094023512
+    second: VFX_MIN_002_MiningHit_v01_58
+  - first:
+      213: -8551196511215116652
+    second: VFX_MIN_002_MiningHit_v01_59
+  - first:
+      213: -4200025426983050727
+    second: VFX_MIN_002_MiningHit_v01_60
+  - first:
+      213: 1887971513077251323
+    second: VFX_MIN_002_MiningHit_v01_61
+  - first:
+      213: 3389998916392012077
+    second: VFX_MIN_002_MiningHit_v01_62
+  - first:
+      213: -4446839353754537186
+    second: VFX_MIN_002_MiningHit_v01_63
+  - first:
+      213: -855479311644589302
+    second: VFX_MIN_002_MiningHit_v01_64
+  - first:
+      213: 2300885448599011159
+    second: VFX_MIN_002_MiningHit_v01_65
+  - first:
+      213: 2382604738983007926
+    second: VFX_MIN_002_MiningHit_v01_66
+  - first:
+      213: -8712481607717140872
+    second: VFX_MIN_002_MiningHit_v01_67
+  - first:
+      213: -7900821234080253187
+    second: VFX_MIN_002_MiningHit_v01_68
+  - first:
+      213: -8937192027359869553
+    second: VFX_MIN_002_MiningHit_v01_69
+  - first:
+      213: 83785590642238458
+    second: VFX_MIN_002_MiningHit_v01_70
+  - first:
+      213: 3056578114268029995
+    second: VFX_MIN_002_MiningHit_v01_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 70
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VFX_MIN_002_MiningHit_v01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 444
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57c169a9c7e82190800000000000000
+      internalID: -7986879085825374371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_002_MiningHit_v01_1
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 444
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 978593a38debe76e0800000000000000
+      internalID: -1837821762021533575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_002_MiningHit_v01_2
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 444
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de1d6493bc1a7a1f0800000000000000
+      internalID: -1033679695246863891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_002_MiningHit_v01_3
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 444
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abd74efc01457cd40800000000000000
+      internalID: 5604540692469939642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_002_MiningHit_v01_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5aed5cec61122b0800000000000000
+      internalID: -5611178583388150279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_002_MiningHit_v01_5
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 1
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8cf88c12dc706e0800000000000000
+      internalID: -1871301575166670672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_002_MiningHit_v01_6
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 1
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e98396f359d159e20800000000000000
+      internalID: 3356621624125765790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_002_MiningHit_v01_7
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 1
+        width: 443
+        height: 443
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c84481b978a7a5bc0800000000000000
+      internalID: -3793585013264989044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 4429793bc37d4b1459c4bc512be7c96f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":443.0,"y":443.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      VFX_MIN_002_MiningHit_v01_0: -7986879085825374371
+      VFX_MIN_002_MiningHit_v01_1: -1837821762021533575
+      VFX_MIN_002_MiningHit_v01_2: -1033679695246863891
+      VFX_MIN_002_MiningHit_v01_3: 5604540692469939642
+      VFX_MIN_002_MiningHit_v01_4: -5611178583388150279
+      VFX_MIN_002_MiningHit_v01_5: -1871301575166670672
+      VFX_MIN_002_MiningHit_v01_6: 3356621624125765790
+      VFX_MIN_002_MiningHit_v01_7: -3793585013264989044
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

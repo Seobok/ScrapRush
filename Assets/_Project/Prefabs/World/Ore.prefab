@@ -44,6 +44,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visual: {fileID: 1012}
+  targetSequence:
+  - {fileID: 21300000, guid: 03b5abb010f444e489417c8111bb0f20, type: 3}
+  - {fileID: 21300000, guid: 50105eba8c073ec4b9c87026928556aa, type: 3}
+  - {fileID: 21300000, guid: fe96d3f7876f184469a70d339dbb63cd, type: 3}
+  - {fileID: 21300000, guid: 33dc18e2f0f3e334990ce683e00ac4af, type: 3}
+  - {fileID: 21300000, guid: a663c5ae06b5948449e9f73530ef0c48, type: 3}
+  - {fileID: 21300000, guid: 052d749c9556a2f49856b0262cecf672, type: 3}
+  - {fileID: 21300000, guid: c4079b5c5beb40f458d95db2eaea4d0f, type: 3}
+  - {fileID: 21300000, guid: c537b6807cea0f84e980d31abbc6e01b, type: 3}
+  targetLoop: {fileID: 21300000, guid: 9ff9b76e2f785ec45bb3ab381dc74b30, type: 3}
+  targetFramesPerSecond: 24
+  targetSizeMultiplier: 2
 --- !u!50 &1004
 Rigidbody2D:
   m_ObjectHideFlags: 0

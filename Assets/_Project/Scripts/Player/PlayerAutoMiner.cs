@@ -40,8 +40,11 @@ namespace ScrapRush.Player
                 TargetChanges++;
             }
             if (Target == null || cooldown > 0) return;
+            Vector3 hitPosition = Target.transform.position;
+            float hitSize = Target.Definition.visualSize;
             if (Target.ApplyDamage(settings.damage, MiningSource.Basic))
             {
+                MiningHitEffect.Play(settings, hitPosition, hitSize, gameObject.scene);
                 HitCount++;
                 // No backlog of attacks while idle, and switching never resets this timer.
                 cooldown = settings.interval;

@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 6cfba17a0800a4e40ad29d2d3722ca70
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3381641429994431580
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_0
+  - first:
+      213: 3092624195009316840
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_1
+  - first:
+      213: -8490596145801031872
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_2
+  - first:
+      213: 7110427233697423915
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_3
+  - first:
+      213: 6465150125579567012
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_4
+  - first:
+      213: 8428543889036902205
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_5
+  - first:
+      213: -985976614769305119
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_6
+  - first:
+      213: 2334035790529787495
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_7
+  - first:
+      213: 6690103185720839797
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_8
+  - first:
+      213: -3133212053048858000
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_9
+  - first:
+      213: -4866390864094716574
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_10
+  - first:
+      213: -3040990338783456742
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_11
+  - first:
+      213: -1319880104402462533
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_12
+  - first:
+      213: 120237675375372215
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_13
+  - first:
+      213: -8107019715966850903
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_14
+  - first:
+      213: 1113857666944515197
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_15
+  - first:
+      213: 7738762509707129812
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_16
+  - first:
+      213: -3035134649541369234
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_17
+  - first:
+      213: -2914268625383724040
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_18
+  - first:
+      213: -9071635315181434657
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_19
+  - first:
+      213: 572481566831845305
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_20
+  - first:
+      213: 489318309323097492
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_21
+  - first:
+      213: 8075501856648241318
+    second: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 46
+        width: 147
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ab107f390ff111d0800000000000000
+      internalID: -3381641429994431580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_1
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 33
+        width: 162
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e70f47e1553bea20800000000000000
+      internalID: 3092624195009316840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_6
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 44
+        width: 151
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e955d72e7b1152f0800000000000000
+      internalID: -985976614769305119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_7
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 45
+        width: 155
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 766739b6f29246020800000000000000
+      internalID: 2334035790529787495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_8
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 40
+        width: 168
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57e8997d66508dc50800000000000000
+      internalID: 6690103185720839797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_9
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 40
+        width: 166
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07aec0cfc389484d0800000000000000
+      internalID: -3133212053048858000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_10
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 45
+        width: 166
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d9d67da4b177cb0800000000000000
+      internalID: -4866390864094716574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_11
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 46
+        width: 165
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a12da63166b3cc5d0800000000000000
+      internalID: -3040990338783456742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b5a2983b8b5ac3441adef80127778452
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_0: -3381641429994431580
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_1: 3092624195009316840
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_10: -4866390864094716574
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_11: -3040990338783456742
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_12: -1319880104402462533
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_13: 120237675375372215
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_14: -8107019715966850903
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_15: 1113857666944515197
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_16: 7738762509707129812
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_17: -3035134649541369234
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_18: -2914268625383724040
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_19: -9071635315181434657
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_2: -8490596145801031872
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_20: 572481566831845305
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_21: 489318309323097492
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_22: 8075501856648241318
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_23: 343485993
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_24: 695780844
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_3: 7110427233697423915
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_4: 6465150125579567012
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_5: 8428543889036902205
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_6: -985976614769305119
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_7: 2334035790529787495
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_8: 6690103185720839797
+      VFX_MIN_001_AutoMiningTarget_SpriteSheet_8f_v01_9: -3133212053048858000
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
