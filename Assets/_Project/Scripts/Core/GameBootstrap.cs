@@ -13,11 +13,13 @@ namespace ScrapRush.Core
         [SerializeField] private OreNode orePrefab = null;
         [SerializeField] private OreSpawnSettings oreSpawnSettings = null;
 
+        [SerializeField] private ScrapSettings scrapSettings = null;
+
         private void Awake()
         {
-            if (settings == null || playerPrefab == null || sectorPrefab == null || orePrefab == null || oreSpawnSettings == null)
+            if (settings == null || playerPrefab == null || sectorPrefab == null || orePrefab == null || oreSpawnSettings == null || scrapSettings == null)
             {
-                Debug.LogError("Core settings, Player/Sector/Ore prefabs and OreSpawnSettings are required.", this);
+                Debug.LogError("Core settings, Player/Sector/Ore prefabs and Ore/Scrap settings are required.", this);
                 enabled = false;
                 return;
             }
@@ -32,6 +34,9 @@ namespace ScrapRush.Core
             player.Initialize(world, settings.moveSpeed, settings.playerRadius);
             player.GetComponent<PlayerAutoMiner>().Initialize(ores);
 
+            var scraps = CreateChild("ScrapRoot").AddComponent<ScrapSystem>();
+            scraps.Initialize(ores, player.transform, scrapSettings, settings.playerRadius);
+
             Camera camera = Camera.main;
             if (camera == null)
             {
@@ -43,7 +48,7 @@ namespace ScrapRush.Core
             var follow = camera.GetComponent<CameraFollow>();
             if (follow == null) follow = camera.gameObject.AddComponent<CameraFollow>();
             follow.Initialize(player.transform, world.Bounds, settings.cameraSize, settings.cameraSmoothTime);
-            CreateChild("DebugHUD").AddComponent<CorePlayDebugHud>().Initialize(world, player.transform, ores);
+            CreateChild("DebugHUD").AddComponent<CorePlayDebugHud>().Initialize(world, player.transform, ores, scraps);
         }
 
         private GameObject CreateChild(string objectName)

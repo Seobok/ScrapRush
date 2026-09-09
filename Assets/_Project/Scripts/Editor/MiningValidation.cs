@@ -44,6 +44,7 @@ namespace ScrapRush.Editor
             try
             {
                 Validate(spawner);
+                ValidateScrap(spawner);
                 File.WriteAllLines(Path.Combine(Root, "mining-validation.txt"), Passed);
                 Debug.Log("MINING VALIDATION PASSED: " + Passed.Count);
                 EditorApplication.Exit(0);
@@ -176,6 +177,60 @@ namespace ScrapRush.Editor
                 "Physics simulation separates overlapping ores");
             Object.DestroyImmediate(aPhysics.gameObject);
             Object.DestroyImmediate(bPhysics.gameObject);
+        }
+        private static void ValidateScrap(OreSpawner ores)
+        {
+            var scraps = Object.FindFirstObjectByType<ScrapSystem>();
+            var miner = Object.FindFirstObjectByType<PlayerAutoMiner>();
+            var settings = AssetDatabase.LoadAssetAtPath<ScrapSettings>("Assets/_Project/Data/ScrapSettings.asset");
+            Check(scraps != null && settings.sprite != null && settings.absorbRange == 1.75f,
+                "Scrap bootstrap and imported sprite are wired with range 1.75");
+            scraps.Initialize(ores, miner.transform, settings, 0.45f);
+            var tick = typeof(ScrapSystem).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
+            Action<float> step = dt => tick.Invoke(scraps, new object[] {dt});
+            int events = 0;
+            OreBreakInfo last = default;
+            scraps.Absorbed += info => { events++; last = info; };
+            var node = ores.Nodes.First(n => n.Definition.kind == OreKind.Gold);
+            Vector2 origin = node.transform.position;
+            miner.transform.position = origin + Vector2.right * 20;
+            node.ApplyDamage(100, MiningSource.Electric);
+            node.ApplyDamage(100, MiningSource.Electric);
+            Check(scraps.GeneratedCount == 1 && scraps.Drops.Count == 1 && scraps.Credits == 0 && events == 0,
+                "Ore break creates one Scrap without paying C or duplicate generation");
+            step(3600);
+            Check(scraps.Drops.Count == 1 && !scraps.Drops[0].IsTracking && scraps.Credits == 0,
+                "Out-of-range Scrap persists indefinitely without income");
+            miner.transform.position = origin + Vector2.right * 1.75f;
+            step(0.01f);
+            Check(scraps.Drops[0].IsTracking && scraps.Credits == 0, "Range boundary starts tracking without early payment");
+            miner.transform.position = origin + Vector2.right * 10;
+            for (int i = 0; i < 200; i++) step(0.02f);
+            Check(scraps.Drops.Count == 0 && scraps.Credits == 80 && events == 1 && last.Source == MiningSource.Electric,
+                "Tracking continues outside acquisition range and pays exact gold value with one source-preserving event");
+            step(1);
+            Check(events == 1 && scraps.Credits == 80, "Collected Scrap never pays twice");
+            step(30);
+            Check(scraps.RecentCredits == 0 && scraps.Credits == 80, "Rolling income expires while session C persists");
+            foreach (var kind in new[] {OreKind.Iron, OreKind.Copper, OreKind.Core})
+            {
+                var ore = ores.Nodes.First(n => n.Definition.kind == kind);
+                miner.transform.position = ore.transform.position;
+                ore.ApplyDamage(100, MiningSource.Basic);
+                step(0);
+                Check(scraps.Drops.Count == 1, "Zero delta pauses Scrap: " + kind);
+                step(1);
+            }
+            Check(scraps.Credits == 365 && scraps.AbsorbedCount == 4 && events == 4,
+                "All four ore values settle to exactly 365 C and four Absorb events");
+            var remaining = ores.Nodes.Take(100).ToArray();
+            miner.transform.position = new Vector3(1000,1000,0);
+            foreach (var ore in remaining) ore.ApplyDamage(100, MiningSource.Gravity);
+            Check(scraps.Drops.Count == 100 && scraps.PeakActiveCount == 100, "Mass generation retains all 100 drops");
+            scraps.ClearStage();
+            step(1);
+            Check(scraps.Drops.Count == 0 && scraps.ClearedCount == 100 && scraps.Credits == 365 && events == 4,
+                "Stage cleanup discards remaining Scrap without currency or Absorb events");
         }
     }
 }
