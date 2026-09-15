@@ -5,19 +5,47 @@ namespace ScrapRush.World
 {
     public enum MiningSource { Basic, Gravity, Electric }
 
+    public readonly struct MiningDamageContext
+    {
+        public readonly MiningSource Source;
+        public readonly int RootEffectId;
+        public readonly int Generation;
+        public readonly float FinalCModifier;
+
+        public MiningDamageContext(MiningSource source, int rootEffectId = 0, int generation = 0,
+            float finalCModifier = 0f)
+        {
+            Source = source;
+            RootEffectId = rootEffectId;
+            Generation = generation;
+            FinalCModifier = finalCModifier;
+        }
+    }
+
     public readonly struct OreBreakInfo
     {
         public readonly OreDefinition Definition;
         public readonly Vector2 Position;
         public readonly int BaseValue;
         public readonly MiningSource Source;
+        public readonly int RootEffectId;
+        public readonly int Generation;
+        public readonly float FinalCModifier;
+        public int FinalValue => Mathf.Max(0,
+            Mathf.FloorToInt(BaseValue * Mathf.Max(0f, 1f + FinalCModifier) + 0.0001f));
 
         public OreBreakInfo(OreDefinition definition, Vector2 position, MiningSource source)
+            : this(definition, position, new MiningDamageContext(source)) { }
+
+        public OreBreakInfo(OreDefinition definition, Vector2 position, MiningDamageContext context)
         {
             Definition = definition;
             Position = position;
             BaseValue = definition.baseValue;
-            Source = source;
+            Source = context.Source;
+            RootEffectId = context.RootEffectId;
+            Generation = context.Generation;
+            FinalCModifier = context.FinalCModifier;
         }
     }
 
@@ -114,6 +142,9 @@ namespace ScrapRush.World
         private void OnDisable() => SetSelected(false);
 
         public bool ApplyDamage(int damage, MiningSource source)
+            => ApplyDamage(damage, new MiningDamageContext(source));
+
+        public bool ApplyDamage(int damage, MiningDamageContext context)
         {
             if (!IsAlive || damage <= 0) return false;
             Health = Mathf.Max(0, Health - damage);
@@ -122,7 +153,7 @@ namespace ScrapRush.World
 
             // Invalidate before notifying: another effect must never break this ore twice.
             shape.enabled = false;
-            var info = new OreBreakInfo(Definition, transform.position, source);
+            var info = new OreBreakInfo(Definition, transform.position, context);
             gameObject.SetActive(false);
             ScrapRush.Core.SfxPlayer.Play(breakSound, breakVolume);
             ScrapRush.Player.MiningHitEffect.Play(breakFrames, breakFramesPerSecond,

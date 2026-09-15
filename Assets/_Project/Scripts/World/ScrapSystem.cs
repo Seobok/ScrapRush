@@ -95,9 +95,10 @@ namespace ScrapRush.World
                 Release(drop);
                 PlayContactEffect(contactPosition);
                 ScrapRush.Core.SfxPlayer.Play(settings.absorbSound, settings.absorbVolume);
-                Credits += info.BaseValue;
-                RecentCredits += info.BaseValue;
-                income.Enqueue((elapsed, info.BaseValue));
+                int value = info.FinalValue;
+                Credits += value;
+                RecentCredits += value;
+                income.Enqueue((elapsed, value));
                 AbsorbedCount++;
                 completed.Add(info);
             }

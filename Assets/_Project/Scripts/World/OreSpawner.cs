@@ -74,12 +74,15 @@ namespace ScrapRush.World
 
         // P0 has a few hundred ores. A world-owned list avoids scene searches and fixed-buffer overflow.
         public OreNode FindNearest(Vector2 position, float range)
+            => FindNearest(position, range, null);
+
+        public OreNode FindNearest(Vector2 position, float range, ISet<OreNode> excluded)
         {
             OreNode nearest = null;
             float best = range * range;
             foreach (var node in nodes)
             {
-                if (node == null || !node.IsAlive) continue;
+                if (node == null || !node.IsAlive || (excluded != null && excluded.Contains(node))) continue;
                 float distance = ((Vector2)node.transform.position - position).sqrMagnitude;
                 if (distance > best || (nearest != null && distance == best)) continue;
                 best = distance;

@@ -16,3 +16,4 @@ MonoBehaviour:
   playerRadius: 0.45
   cameraSize: 8
   cameraSmoothTime: 0.15
+  startingElectricCount: 6

@@ -46,6 +46,7 @@ namespace ScrapRush.Editor
                 Validate(spawner);
                 ValidateTargetEffect();
                 ValidateMiningHit(spawner);
+                ValidateElectric();
                 ValidateScrap(spawner);
                 File.WriteAllLines(Path.Combine(Root, "mining-validation.txt"), Passed);
                 Debug.Log("MINING VALIDATION PASSED: " + Passed.Count);
@@ -283,10 +284,11 @@ namespace ScrapRush.Editor
             var node = ores.Nodes.First(n => n.Definition.kind == OreKind.Gold);
             Vector2 origin = node.transform.position;
             miner.transform.position = origin + Vector2.right * 20;
+            node.ApplyDamage(100, new MiningDamageContext(MiningSource.Electric, 99, 0, 0.25f));
             node.ApplyDamage(100, MiningSource.Electric);
-            node.ApplyDamage(100, MiningSource.Electric);
-            Check(scraps.GeneratedCount == 1 && scraps.Drops.Count == 1 && scraps.Credits == 0 && events == 0,
-                "Ore break creates one Scrap without paying C or duplicate generation");
+            Check(scraps.GeneratedCount == 1 && scraps.Drops.Count == 1 && scraps.Credits == 0 && events == 0 &&
+                scraps.Drops[0].Origin.FinalCModifier == 0.25f && scraps.Drops[0].Origin.FinalValue == 100,
+                "Ore break creates one modifier-carrying Scrap without paying C or duplicate generation");
             var pooledDrop = scraps.Drops[0];
             var trail = pooledDrop.GetComponent<TrailRenderer>();
             Check(trail != null && !trail.enabled && !trail.emitting && trail.sharedMaterial != null,
@@ -300,8 +302,9 @@ namespace ScrapRush.Editor
                 "Range boundary starts tracking and Trail emission without early payment");
             miner.transform.position = origin + Vector2.right * 10;
             for (int i = 0; i < 200; i++) step(0.02f);
-            Check(scraps.Drops.Count == 0 && scraps.Credits == 80 && events == 1 && last.Source == MiningSource.Electric,
-                "Tracking continues outside acquisition range and pays exact gold value with one source-preserving event");
+            Check(scraps.Drops.Count == 0 && scraps.Credits == 100 && events == 1 && last.Source == MiningSource.Electric &&
+                last.RootEffectId == 99 && last.FinalValue == 100,
+                "Tracking continues outside acquisition range and pays modified gold value with source context once");
             int pooledAfterAbsorb = scraps.PooledCount;
             Check(!pooledDrop.gameObject.activeSelf && pooledAfterAbsorb > 0,
                 "Absorbed Scrap disables and returns to the pool");
@@ -320,9 +323,9 @@ namespace ScrapRush.Editor
             Check(!contactEffects[0].gameObject.activeSelf && !contactEffects[0].IsPlaying,
                 "Scrap contact effect returns to its pool after one playback");
             step(1);
-            Check(events == 1 && scraps.Credits == 80, "Collected Scrap never pays twice");
+            Check(events == 1 && scraps.Credits == 100, "Collected Scrap never pays twice");
             step(30);
-            Check(scraps.RecentCredits == 0 && scraps.Credits == 80, "Rolling income expires while session C persists");
+            Check(scraps.RecentCredits == 0 && scraps.Credits == 100, "Rolling income expires while session C persists");
             foreach (var kind in new[] {OreKind.Iron, OreKind.Copper, OreKind.Core})
             {
                 var ore = ores.Nodes.First(n => n.Definition.kind == kind);
@@ -334,16 +337,89 @@ namespace ScrapRush.Editor
                     Check(scraps.PooledCount == pooledAfterAbsorb - 1, "A pooled Scrap is reused for the next drop");
                 step(1);
             }
-            Check(scraps.Credits == 365 && scraps.AbsorbedCount == 4 && events == 4,
-                "All four ore values settle to exactly 365 C and four Absorb events");
+            Check(scraps.Credits == 385 && scraps.AbsorbedCount == 4 && events == 4,
+                "Three base values and one +25% electric value settle to exactly 385 C");
             var remaining = ores.Nodes.Take(100).ToArray();
             miner.transform.position = new Vector3(1000,1000,0);
             foreach (var ore in remaining) ore.ApplyDamage(100, MiningSource.Gravity);
             Check(scraps.Drops.Count == 100 && scraps.PeakActiveCount == 100, "Mass generation retains all 100 drops");
             scraps.ClearStage();
             step(1);
-            Check(scraps.Drops.Count == 0 && scraps.ClearedCount == 100 && scraps.Credits == 365 && events == 4,
+            Check(scraps.Drops.Count == 0 && scraps.ClearedCount == 100 && scraps.Credits == 385 && events == 4,
                 "Stage cleanup discards remaining Scrap without currency or Absorb events");
+        }
+
+        private static void ValidateElectric()
+        {
+            var world = Object.FindFirstObjectByType<SectorWorld>();
+            var prefab = AssetDatabase.LoadAssetAtPath<OreNode>("Assets/_Project/Prefabs/World/Ore.prefab");
+            var spawnSettings = AssetDatabase.LoadAssetAtPath<OreSpawnSettings>("Assets/_Project/Data/OreSpawnSettings.asset");
+            var electricSettings = AssetDatabase.LoadAssetAtPath<ElectricSettings>("Assets/_Project/Data/ElectricSettings.asset");
+            Check(electricSettings != null && electricSettings.cooldown == 6f && electricSettings.targetRange == 6f &&
+                electricSettings.damage == 1 && electricSettings.chainRange == 3f &&
+                electricSettings.maxChainTargets == 4 && electricSettings.stormExtraDischarges == 4 &&
+                electricSettings.stormInterval == 0.5f && electricSettings.enableElectricValueBonus &&
+                electricSettings.electricValueBonus == 0.25f,
+                "Electric settings match the P0 2/4/6 hypotheses");
+
+            var root = new GameObject("Electric Validation");
+            var player = new GameObject("Electric Player");
+            player.transform.SetParent(root.transform, false);
+            var spawner = new GameObject("Electric Ores").AddComponent<OreSpawner>();
+            spawner.transform.SetParent(root.transform, false);
+            spawner.Initialize(world, prefab, spawnSettings);
+            foreach (var ore in spawner.Nodes) ore.transform.position = new Vector3(500, 500, 0);
+
+            var core = spawner.Nodes.First(n => n.Definition.kind == OreKind.Core);
+            var electric = player.AddComponent<ElectricSystem>();
+            electric.Initialize(spawner, player.transform, electricSettings, 2);
+            var electricTick = typeof(ElectricSystem).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
+            Action<float> stepElectric = dt => electricTick.Invoke(electric, new object[] {dt});
+            stepElectric(6f);
+            stepElectric(100f);
+            Check(electric.IsReady && electric.StaticTriggerCount == 0 && core.Health == 5,
+                "Electric 2 holds READY without a target and never banks missed discharges");
+            core.transform.position = Vector3.right;
+            stepElectric(0.01f);
+            Check(!electric.IsReady && electric.StaticTriggerCount == 1 && electric.DischargeCount == 1 &&
+                electric.HitCount == 1 && core.Health == 4 && electric.CooldownRemaining == electricSettings.cooldown,
+                "Electric 2 fires once when a target enters range and restarts cooldown on the actual discharge");
+
+            electric.SetTraitCount(0);
+            core.transform.position = new Vector3(500, 500, 0);
+            var chainNodes = spawner.Nodes.Where(n => n.Definition.kind == OreKind.Iron).Take(5).ToArray();
+            Check(chainNodes.Length == 5, "Electric validation population contains five chain targets");
+            for (int i = 0; i < chainNodes.Length; i++) chainNodes[i].transform.position = new Vector3(1f + i * 2.5f, 0, 0);
+            electric.SetTraitCount(4);
+            stepElectric(6f);
+            Check(electric.StaticTriggerCount == 2 && electric.DischargeCount == 2 &&
+                electric.HitCount == 5 && electric.ChainHitCount == 3 &&
+                chainNodes.Take(4).All(n => !n.IsAlive) && chainNodes[4].IsAlive,
+                "Electric 4 chains through the nearest unhit ores and stops at four total targets");
+
+            electric.SetTraitCount(0);
+            foreach (var ore in spawner.Nodes) if (ore != null && ore.IsAlive) ore.transform.position = new Vector3(500, 500, 0);
+            var stormCore = spawner.Nodes.First(n => n.Definition.kind == OreKind.Core && n != core);
+            stormCore.transform.position = Vector3.right;
+            int dischargesBeforeStorm = electric.DischargeCount;
+            int hitsBeforeStorm = electric.HitCount;
+            electric.SetTraitCount(6);
+            stepElectric(6f);
+            stepElectric(0.49f);
+            Check(electric.StormCount == 1 && electric.StormShotsRemaining == 4 && stormCore.Health == 4,
+                "Electric 6 starts Storm with one immediate discharge and waits 0.5 seconds for extras");
+            stepElectric(0.01f);
+            stepElectric(1.5f);
+            Check(electric.DischargeCount - dischargesBeforeStorm == 5 && electric.HitCount - hitsBeforeStorm == 5 &&
+                electric.StormShotsRemaining == 0 && !stormCore.IsAlive,
+                "Electric 6 performs exactly four scheduled extras and may retarget the same living ore between discharges");
+
+            electric.SetTraitCount(0);
+            Check(electric.ActiveTier == 0 && !electric.IsReady && electric.StormShotsRemaining == 0,
+                "Disabling Electric clears charge and pending Storm work");
+            foreach (var effect in Object.FindObjectsByType<ElectricArcEffect>(FindObjectsSortMode.None))
+                Object.DestroyImmediate(effect.gameObject);
+            Object.DestroyImmediate(root);
         }
     }
 }
