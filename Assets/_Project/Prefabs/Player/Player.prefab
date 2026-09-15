@@ -46,6 +46,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173399c39c1d43beb5f97bc41daa7ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  visual: {fileID: 1022}
+  frontSprite: {fileID: 21300000, guid: 97059a6192a242d4bbf69b61375f0c77, type: 3}
+  backSprite: {fileID: 21300000, guid: 2852ea0c1a5a5a24888b5053ab9cc462, type: 3}
+  leftSprite: {fileID: 21300000, guid: 26e81e1ed2df0214e81b593693aece4c, type: 3}
+  rightSprite: {fileID: 21300000, guid: 9adac9641ebb4564d932c839632c2ab5, type: 3}
+  leftFrontSprite: {fileID: 21300000, guid: b0c88132de6ccae42ad1f023404ea51b, type: 3}
+  rightFrontSprite: {fileID: 21300000, guid: 14ce35f6527bb2c429e038bb37b74736, type: 3}
+  leftBackSprite: {fileID: 21300000, guid: 4d176944928e232489190af199be653f, type: 3}
+  rightBackSprite: {fileID: 21300000, guid: 4b4064420606347469c297a1d00b5572, type: 3}
 --- !u!1 &1010
 GameObject:
   m_ObjectHideFlags: 0

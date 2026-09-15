@@ -269,8 +269,11 @@ namespace ScrapRush.Editor
             var scraps = Object.FindFirstObjectByType<ScrapSystem>();
             var miner = Object.FindFirstObjectByType<PlayerAutoMiner>();
             var settings = AssetDatabase.LoadAssetAtPath<ScrapSettings>("Assets/_Project/Data/ScrapSettings.asset");
-            Check(scraps != null && settings.sprite != null && settings.absorbRange == 1.75f,
-                "Scrap bootstrap and imported sprite are wired with range 1.75");
+            Check(scraps != null && settings.sprite != null && settings.absorbRange == 1.75f &&
+                settings.absorbContactFrames.Length == 6 && settings.absorbContactFrames.Select((sprite, index) =>
+                    sprite != null && sprite.name == "VFX_RES_003_AbsorbContactPop_v01_" + index &&
+                    sprite.rect.width == 512 && sprite.rect.height == 512).All(x => x),
+                "Scrap bootstrap, drop sprite and six contact-effect frames are wired");
             scraps.Initialize(ores, miner.transform, settings, 0.45f);
             var tick = typeof(ScrapSystem).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
             Action<float> step = dt => tick.Invoke(scraps, new object[] {dt});
@@ -284,16 +287,38 @@ namespace ScrapRush.Editor
             node.ApplyDamage(100, MiningSource.Electric);
             Check(scraps.GeneratedCount == 1 && scraps.Drops.Count == 1 && scraps.Credits == 0 && events == 0,
                 "Ore break creates one Scrap without paying C or duplicate generation");
+            var pooledDrop = scraps.Drops[0];
+            var trail = pooledDrop.GetComponent<TrailRenderer>();
+            Check(trail != null && !trail.enabled && !trail.emitting && trail.sharedMaterial != null,
+                "Scrap Trail exists but stays disabled before absorption");
             step(3600);
             Check(scraps.Drops.Count == 1 && !scraps.Drops[0].IsTracking && scraps.Credits == 0,
                 "Out-of-range Scrap persists indefinitely without income");
             miner.transform.position = origin + Vector2.right * 1.75f;
             step(0.01f);
-            Check(scraps.Drops[0].IsTracking && scraps.Credits == 0, "Range boundary starts tracking without early payment");
+            Check(scraps.Drops[0].IsTracking && trail.enabled && trail.emitting && scraps.Credits == 0,
+                "Range boundary starts tracking and Trail emission without early payment");
             miner.transform.position = origin + Vector2.right * 10;
             for (int i = 0; i < 200; i++) step(0.02f);
             Check(scraps.Drops.Count == 0 && scraps.Credits == 80 && events == 1 && last.Source == MiningSource.Electric,
                 "Tracking continues outside acquisition range and pays exact gold value with one source-preserving event");
+            int pooledAfterAbsorb = scraps.PooledCount;
+            Check(!pooledDrop.gameObject.activeSelf && pooledAfterAbsorb > 0,
+                "Absorbed Scrap disables and returns to the pool");
+            var contactEffects = Object.FindObjectsByType<ScrapAbsorbEffect>(FindObjectsSortMode.None);
+            Check(contactEffects.Length == 1 && contactEffects[0].IsPlaying &&
+                contactEffects[0].GetComponent<SpriteRenderer>().sprite == settings.absorbContactFrames[0],
+                "Scrap arrival plays one contact effect at its first frame");
+            var contactTick = typeof(ScrapAbsorbEffect).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
+            for (int i = 1; i < settings.absorbContactFrames.Length; i++)
+            {
+                contactTick.Invoke(contactEffects[0], new object[] {1f / settings.absorbContactFramesPerSecond + 0.00001f});
+                Check(contactEffects[0].GetComponent<SpriteRenderer>().sprite == settings.absorbContactFrames[i],
+                    "Scrap contact effect plays frame " + (i + 1));
+            }
+            contactTick.Invoke(contactEffects[0], new object[] {1f / settings.absorbContactFramesPerSecond});
+            Check(!contactEffects[0].gameObject.activeSelf && !contactEffects[0].IsPlaying,
+                "Scrap contact effect returns to its pool after one playback");
             step(1);
             Check(events == 1 && scraps.Credits == 80, "Collected Scrap never pays twice");
             step(30);
@@ -305,6 +330,8 @@ namespace ScrapRush.Editor
                 ore.ApplyDamage(100, MiningSource.Basic);
                 step(0);
                 Check(scraps.Drops.Count == 1, "Zero delta pauses Scrap: " + kind);
+                if (kind == OreKind.Iron)
+                    Check(scraps.PooledCount == pooledAfterAbsorb - 1, "A pooled Scrap is reused for the next drop");
                 step(1);
             }
             Check(scraps.Credits == 365 && scraps.AbsorbedCount == 4 && events == 4,

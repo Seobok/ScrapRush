@@ -14,7 +14,8 @@ namespace ScrapRush.Player
 
         public void Initialize(OreSpawner spawner)
         {
-            if (settings == null || settings.range <= 0 || settings.interval <= 0 || settings.damage < 1)
+            if (settings == null || settings.range <= 0 || settings.interval <= 0 || settings.damage < 1 ||
+                settings.hitSound == null)
                 throw new System.InvalidOperationException("PlayerAutoMiner requires valid MiningSettings.");
             ores = spawner;
             cooldown = 0;
@@ -44,6 +45,7 @@ namespace ScrapRush.Player
             float hitSize = Target.Definition.visualSize;
             if (Target.ApplyDamage(settings.damage, MiningSource.Basic))
             {
+                ScrapRush.Core.SfxPlayer.Play(settings.hitSound, settings.hitVolume);
                 MiningHitEffect.Play(settings, hitPosition, hitSize, gameObject.scene);
                 HitCount++;
                 // No backlog of attacks while idle, and switching never resets this timer.

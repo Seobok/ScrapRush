@@ -19,3 +19,19 @@ MonoBehaviour:
   maxSpeed: 18
   visualSize: 0.38
   spawnDuration: 0.12
+  trailTime: 0.18
+  trailWidth: 0.16
+  trailMinVertexDistance: 0.12
+  trailStartColor: {r: 0.55, g: 1, b: 1, a: 0.9}
+  trailEndColor: {r: 0.15, g: 0.65, b: 1, a: 0}
+  absorbContactFrames:
+  - {fileID: -1078867794593234177, guid: 87405bab818e4284a878899272a66387, type: 3}
+  - {fileID: -4786431526861486784, guid: 87405bab818e4284a878899272a66387, type: 3}
+  - {fileID: 3702713914513543600, guid: 87405bab818e4284a878899272a66387, type: 3}
+  - {fileID: -1892132453959835357, guid: 87405bab818e4284a878899272a66387, type: 3}
+  - {fileID: -7564802469217425441, guid: 87405bab818e4284a878899272a66387, type: 3}
+  - {fileID: -1450875145777165297, guid: 87405bab818e4284a878899272a66387, type: 3}
+  absorbContactFramesPerSecond: 24
+  absorbContactSize: 1.4
+  absorbSound: {fileID: 8300000, guid: dca174b03ccb426aa517913154d11254, type: 3}
+  absorbVolume: 0.4

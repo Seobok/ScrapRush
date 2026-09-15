@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Rendering;
+
 namespace ScrapRush.World
 {
     public sealed class ScrapDrop : MonoBehaviour
@@ -6,22 +8,34 @@ namespace ScrapRush.World
         public OreBreakInfo Origin { get; private set; }
         public bool IsTracking { get; private set; }
         private SpriteRenderer visual;
+        private TrailRenderer trail;
         private ScrapSettings settings;
         private float age, speed, scale;
         private Vector3 center;
 
-        public void Initialize(OreBreakInfo origin, ScrapSettings configuration)
+        public void Initialize(OreBreakInfo origin, ScrapSettings configuration, Material trailMaterial)
         {
             Origin = origin;
             settings = configuration;
-            var child = new GameObject("Visual");
-            child.transform.SetParent(transform, false);
-            visual = child.AddComponent<SpriteRenderer>();
+            age = 0f;
+            speed = settings.initialSpeed;
+            IsTracking = false;
+
+            if (visual == null)
+            {
+                var child = new GameObject("Visual");
+                child.transform.SetParent(transform, false);
+                visual = child.AddComponent<SpriteRenderer>();
+                visual.sortingOrder = 3;
+            }
+
             visual.sprite = settings.sprite;
-            visual.sortingOrder = 3;
+            visual.color = Color.white;
             scale = settings.visualSize / Mathf.Max(settings.sprite.bounds.size.x, settings.sprite.bounds.size.y);
             center = settings.sprite.bounds.center;
-            speed = settings.initialSpeed;
+
+            if (trail == null) trail = gameObject.AddComponent<TrailRenderer>();
+            ConfigureTrail(trailMaterial);
             UpdateVisual();
         }
 
@@ -34,7 +48,7 @@ namespace ScrapRush.World
             if (age < settings.spawnDuration) return false;
             Vector2 position = transform.position;
             if (!IsTracking && (position - target).sqrMagnitude <= settings.absorbRange * settings.absorbRange)
-                IsTracking = true;
+                BeginTracking();
             if (!IsTracking) return false;
             speed = Mathf.Min(settings.maxSpeed, speed + settings.acceleration * deltaTime);
             position = Vector2.MoveTowards(position, target, speed * deltaTime);
@@ -48,6 +62,48 @@ namespace ScrapRush.World
             float pop = 1f + Mathf.Sin(Mathf.Clamp01(age / settings.spawnDuration) * Mathf.PI) * 0.4f;
             visual.transform.localScale = Vector3.one * (scale * pop);
             visual.transform.localPosition = -center * (scale * pop);
+        }
+
+        public void Release()
+        {
+            IsTracking = false;
+            trail.emitting = false;
+            trail.Clear();
+            trail.enabled = false;
+            gameObject.SetActive(false);
+        }
+
+        private void BeginTracking()
+        {
+            IsTracking = true;
+            trail.Clear();
+            trail.enabled = true;
+            trail.emitting = true;
+        }
+
+        private void ConfigureTrail(Material trailMaterial)
+        {
+            trail.sharedMaterial = trailMaterial;
+            trail.time = settings.trailTime;
+            trail.startWidth = settings.trailWidth;
+            trail.endWidth = 0f;
+            trail.minVertexDistance = settings.trailMinVertexDistance;
+            trail.startColor = settings.trailStartColor;
+            trail.endColor = settings.trailEndColor;
+            trail.alignment = LineAlignment.View;
+            trail.textureMode = LineTextureMode.Stretch;
+            trail.numCornerVertices = 0;
+            trail.numCapVertices = 0;
+            trail.generateLightingData = false;
+            trail.shadowCastingMode = ShadowCastingMode.Off;
+            trail.receiveShadows = false;
+            trail.lightProbeUsage = LightProbeUsage.Off;
+            trail.reflectionProbeUsage = ReflectionProbeUsage.Off;
+            trail.sortingOrder = 2;
+            trail.autodestruct = false;
+            trail.emitting = false;
+            trail.Clear();
+            trail.enabled = false;
         }
     }
 }
