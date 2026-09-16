@@ -12,13 +12,14 @@ namespace ScrapRush.Debugging
         private OreSpawner ores;
         private PlayerAutoMiner miner;
         private ScrapSystem scraps;
+        private MagnetSystem magnet;
         private ElectricSystem electric;
         private float absorbFlash;
         private int recentPickup;
         private Camera viewCamera;
         public void Initialize(SectorWorld sectorWorld, Transform playerTransform, OreSpawner oreSpawner,
-            ScrapSystem scrapSystem, ElectricSystem electricSystem)
-        { scraps = scrapSystem; electric = electricSystem; world = sectorWorld; player = playerTransform; ores = oreSpawner; miner = player.GetComponent<PlayerAutoMiner>(); viewCamera = Camera.main; scraps.Absorbed += OnAbsorbed; }
+            ScrapSystem scrapSystem, MagnetSystem magnetSystem, ElectricSystem electricSystem)
+        { scraps = scrapSystem; magnet = magnetSystem; electric = electricSystem; world = sectorWorld; player = playerTransform; ores = oreSpawner; miner = player.GetComponent<PlayerAutoMiner>(); viewCamera = Camera.main; scraps.Absorbed += OnAbsorbed; }
 
         private void OnAbsorbed(OreBreakInfo info) { recentPickup = absorbFlash > 0 ? recentPickup + info.FinalValue : info.FinalValue; absorbFlash = 0.45f; }
         private void Update()
@@ -30,6 +31,12 @@ namespace ScrapRush.Debugging
             else if (Keyboard.current.digit2Key.wasPressedThisFrame) electric.SetTraitCount(2);
             else if (Keyboard.current.digit4Key.wasPressedThisFrame) electric.SetTraitCount(4);
             else if (Keyboard.current.digit6Key.wasPressedThisFrame) electric.SetTraitCount(6);
+            if (magnet == null) return;
+            if (Keyboard.current.numpad0Key.wasPressedThisFrame) magnet.SetTraitCount(0);
+            else if (Keyboard.current.numpad2Key.wasPressedThisFrame) magnet.SetTraitCount(2);
+            else if (Keyboard.current.numpad4Key.wasPressedThisFrame) magnet.SetTraitCount(4);
+            else if (Keyboard.current.numpad6Key.wasPressedThisFrame) magnet.SetTraitCount(6);
+            else if (Keyboard.current.numpad8Key.wasPressedThisFrame) magnet.SetTraitCount(8);
         }
         private void OnDestroy() { if (scraps != null) scraps.Absorbed -= OnAbsorbed; }
 
@@ -45,8 +52,8 @@ namespace ScrapRush.Debugging
                 GUI.color = previous;
             }
             Vector2Int sector = world.GetSector(player.position);
-            GUI.Box(new Rect(12, 12, 480, 298), "CORE PLAY TEST / SCRAP / ELECTRIC");
-            GUI.Label(new Rect(24, 38, 440, 24), "WASD : Move | Electric test count : 0 / 2 / 4 / 6");
+            GUI.Box(new Rect(12, 12, 510, 394), "CORE PLAY TEST / SCRAP / MAGNET / ELECTRIC");
+            GUI.Label(new Rect(24, 38, 480, 24), "WASD : Move | Electric top row 0/2/4/6 | Magnet numpad 0/2/4/6/8");
             GUI.Label(new Rect(24, 62, 280, 24), $"Sector {SectorWorld.GetSectorName(sector.x, sector.y)}    Position {player.position.x:F1}, {player.position.y:F1}");
             GUI.Label(new Rect(24, 86, 340, 24), $"Ores {ores.Nodes.Count} | Broken {ores.BrokenCount} | Hits {miner.HitCount}");
             var target = miner.Target;
@@ -57,12 +64,19 @@ namespace ScrapRush.Debugging
             GUI.Label(new Rect(24, 158, 400, 24), $"C {scraps.Credits} | Last 30s {scraps.RecentCredits} C | {scraps.CreditsPerSecond:F1} C/s");
             GUI.Label(new Rect(24, 182, 400, 24), $"Scrap generated {scraps.GeneratedCount} | Absorbed {scraps.AbsorbedCount}");
             GUI.Label(new Rect(24, 206, 400, 24), $"Remaining {scraps.Drops.Count} | Peak {scraps.PeakActiveCount} | Cleared {scraps.ClearedCount}");
+            if (magnet != null)
+            {
+                string field = magnet.IsFieldActive ? $"Field {magnet.ActiveFieldId} {magnet.FieldRemaining:F1}s" : "Field idle";
+                GUI.Label(new Rect(24, 230, 470, 24), $"Magnet {magnet.TraitCount} / Tier {magnet.ActiveTier} | Absorb {magnet.PendingAbsorbs}/{magnet.RequiredAbsorbs} | {field}");
+                GUI.Label(new Rect(24, 254, 470, 24), $"Fields {magnet.FieldCount} | Pulses {magnet.PulseCount} | Field absorbed {magnet.FieldAbsorbedCount}");
+                GUI.Label(new Rect(24, 278, 470, 24), $"Gravity hits {magnet.PulseHitCount} | Broken {magnet.PulseBrokenCount} | Cluster pulls {magnet.ClusterAcquiredCount}");
+            }
             if (electric != null)
             {
                 string charge = electric.IsReady ? "READY" : $"{electric.CooldownRemaining:F1}s";
-                GUI.Label(new Rect(24, 230, 450, 24), $"Electric {electric.TraitCount} / Tier {electric.ActiveTier} | Charge {charge} | Storm shots {electric.StormShotsRemaining}");
-                GUI.Label(new Rect(24, 254, 450, 24), $"Static {electric.StaticTriggerCount} | Storm {electric.StormCount} | Discharges {electric.DischargeCount}");
-                GUI.Label(new Rect(24, 278, 450, 24), $"Electric hits {electric.HitCount} | Chain hits {electric.ChainHitCount} | Broken {electric.BrokenCount}");
+                GUI.Label(new Rect(24, 302, 470, 24), $"Electric {electric.TraitCount} / Tier {electric.ActiveTier} | Charge {charge} | Storm shots {electric.StormShotsRemaining}");
+                GUI.Label(new Rect(24, 326, 470, 24), $"Static {electric.StaticTriggerCount} | Storm {electric.StormCount} | Discharges {electric.DischargeCount}");
+                GUI.Label(new Rect(24, 350, 470, 24), $"Electric hits {electric.HitCount} | Chain hits {electric.ChainHitCount} | Broken {electric.BrokenCount}");
             }
             const float cell = 38;
             float left = Mathf.Max(12, Screen.width - 3 * cell - 20);

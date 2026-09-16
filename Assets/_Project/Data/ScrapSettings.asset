@@ -34,4 +34,4 @@ MonoBehaviour:
   absorbContactFramesPerSecond: 24
   absorbContactSize: 1.4
   absorbSound: {fileID: 8300000, guid: dca174b03ccb426aa517913154d11254, type: 3}
-  absorbVolume: 0.4
+  absorbVolume: 0.634

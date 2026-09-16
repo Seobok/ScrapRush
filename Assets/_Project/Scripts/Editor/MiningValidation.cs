@@ -48,6 +48,7 @@ namespace ScrapRush.Editor
                 ValidateMiningHit(spawner);
                 ValidateElectric();
                 ValidateScrap(spawner);
+                ValidateMagnet();
                 File.WriteAllLines(Path.Combine(Root, "mining-validation.txt"), Passed);
                 Debug.Log("MINING VALIDATION PASSED: " + Passed.Count);
                 EditorApplication.Exit(0);
@@ -279,8 +280,11 @@ namespace ScrapRush.Editor
             var tick = typeof(ScrapSystem).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
             Action<float> step = dt => tick.Invoke(scraps, new object[] {dt});
             int events = 0;
+            int detailedEvents = 0;
             OreBreakInfo last = default;
+            ScrapAbsorbInfo lastDetailed = default;
             scraps.Absorbed += info => { events++; last = info; };
+            scraps.AbsorbedDetailed += info => { detailedEvents++; lastDetailed = info; };
             var node = ores.Nodes.First(n => n.Definition.kind == OreKind.Gold);
             Vector2 origin = node.transform.position;
             miner.transform.position = origin + Vector2.right * 20;
@@ -303,8 +307,9 @@ namespace ScrapRush.Editor
             miner.transform.position = origin + Vector2.right * 10;
             for (int i = 0; i < 200; i++) step(0.02f);
             Check(scraps.Drops.Count == 0 && scraps.Credits == 100 && events == 1 && last.Source == MiningSource.Electric &&
-                last.RootEffectId == 99 && last.FinalValue == 100,
-                "Tracking continues outside acquisition range and pays modified gold value with source context once");
+                detailedEvents == 1 && last.RootEffectId == 99 && last.FinalValue == 100 &&
+                lastDetailed.Origin.RootEffectId == 99 && lastDetailed.AcquireCause == ScrapAcquireCause.Natural,
+                "Tracking continues outside acquisition range and pays once with mining and acquisition context");
             int pooledAfterAbsorb = scraps.PooledCount;
             Check(!pooledDrop.gameObject.activeSelf && pooledAfterAbsorb > 0,
                 "Absorbed Scrap disables and returns to the pool");
@@ -418,6 +423,113 @@ namespace ScrapRush.Editor
             Check(electric.ActiveTier == 0 && !electric.IsReady && electric.StormShotsRemaining == 0,
                 "Disabling Electric clears charge and pending Storm work");
             foreach (var effect in Object.FindObjectsByType<ElectricArcEffect>(FindObjectsSortMode.None))
+                Object.DestroyImmediate(effect.gameObject);
+            Object.DestroyImmediate(root);
+        }
+
+        private static void ValidateMagnet()
+        {
+            var world = Object.FindFirstObjectByType<SectorWorld>();
+            var prefab = AssetDatabase.LoadAssetAtPath<OreNode>("Assets/_Project/Prefabs/World/Ore.prefab");
+            var spawnSettings = AssetDatabase.LoadAssetAtPath<OreSpawnSettings>("Assets/_Project/Data/OreSpawnSettings.asset");
+            var scrapSettings = AssetDatabase.LoadAssetAtPath<ScrapSettings>("Assets/_Project/Data/ScrapSettings.asset");
+            var magnetSettings = AssetDatabase.LoadAssetAtPath<MagnetSettings>("Assets/_Project/Data/MagnetSettings.asset");
+            Check(magnetSettings != null && magnetSettings.absorbRangeMultiplier == 1.4f &&
+                magnetSettings.clusterRange == 2.5f && magnetSettings.gravityRequiredAbsorbs == 20 &&
+                magnetSettings.gravityRadius == 5f && magnetSettings.gravityDuration == 2f &&
+                magnetSettings.gravityDamage == 1 && magnetSettings.singularityRequiredAbsorbs == 12 &&
+                magnetSettings.singularityRadius == 8f && magnetSettings.singularitySecondPulseTime == 1f &&
+                magnetSettings.singularityMassAbsorbs == 15,
+                "Magnet settings match the P0 2/4/6/8 hypotheses");
+
+            var root = new GameObject("Magnet Validation");
+            var player = new GameObject("Magnet Player");
+            player.transform.SetParent(root.transform, false);
+            var spawner = new GameObject("Magnet Ores").AddComponent<OreSpawner>();
+            spawner.transform.SetParent(root.transform, false);
+            spawner.Initialize(world, prefab, spawnSettings);
+            foreach (var ore in spawner.Nodes) ore.transform.position = new Vector3(500, 500, 0);
+            var scraps = new GameObject("Magnet Scraps").AddComponent<ScrapSystem>();
+            scraps.transform.SetParent(root.transform, false);
+            scraps.Initialize(spawner, player.transform, scrapSettings, 0.45f);
+            var magnet = player.AddComponent<MagnetSystem>();
+            magnet.Initialize(scraps, spawner, player.transform, magnetSettings, 2);
+            var scrapTick = typeof(ScrapSystem).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
+            var magnetTick = typeof(MagnetSystem).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
+            var spawnScrap = typeof(ScrapSystem).GetMethod("Spawn", BindingFlags.Instance | BindingFlags.NonPublic);
+            var absorb = typeof(MagnetSystem).GetMethod("OnAbsorbed", BindingFlags.Instance | BindingFlags.NonPublic);
+            Action<float> stepScrap = dt => scrapTick.Invoke(scraps, new object[] {dt});
+            Action<float> stepMagnet = dt => magnetTick.Invoke(magnet, new object[] {dt});
+            var iron = spawnSettings.ores.First(e => e.definition.kind == OreKind.Iron).definition;
+            Check(Mathf.Approximately(scraps.EffectiveAbsorbRange, scrapSettings.absorbRange * 1.4f),
+                "Magnet 2 increases the Scrap acquisition range by exactly 40 percent");
+            spawnScrap.Invoke(scraps, new object[] {new OreBreakInfo(iron, new Vector2(2.44f, 0f), MiningSource.Basic)});
+            stepScrap(0.13f);
+            Check(scraps.Drops.Count == 1 && scraps.Drops[0].IsTracking,
+                "Magnet 2 acquires Scrap inside the enlarged boundary");
+
+            scraps.ClearStage();
+            magnet.SetTraitCount(4);
+            spawnScrap.Invoke(scraps, new object[] {new OreBreakInfo(iron, new Vector2(2.4f, 0f), MiningSource.Basic)});
+            spawnScrap.Invoke(scraps, new object[] {new OreBreakInfo(iron, new Vector2(4.7f, 0f), MiningSource.Basic)});
+            stepScrap(0.13f);
+            Check(scraps.Drops.Count == 2 && scraps.Drops.All(d => d.IsTracking) &&
+                magnet.ClusterTriggerCount == 1 && magnet.ClusterAcquiredCount == 1,
+                "Magnet 4 pulls one nearby cluster without recursively propagating forced acquisitions");
+
+            scraps.ClearStage();
+            magnet.SetTraitCount(6);
+            var gravityCore = spawner.Nodes.First(n => n.Definition.kind == OreKind.Core);
+            gravityCore.transform.position = Vector3.right;
+            var naturalAbsorb = new ScrapAbsorbInfo(new OreBreakInfo(iron, Vector2.zero, MiningSource.Basic),
+                ScrapAcquireCause.Natural, 0);
+            for (int i = 0; i < 19; i++) absorb.Invoke(magnet, new object[] {naturalAbsorb});
+            Check(!magnet.IsFieldActive && magnet.PendingAbsorbs == 19,
+                "Magnet 6 waits for the twentieth absorbed Scrap");
+            absorb.Invoke(magnet, new object[] {naturalAbsorb});
+            Check(magnet.IsFieldActive && magnet.FieldCount == 1 && magnet.PulseCount == 1 &&
+                gravityCore.Health == gravityCore.Definition.maxHealth - 1,
+                "Magnet 6 starts one Field and performs one immediate Gravity Pulse");
+            for (int i = 0; i < 20; i++) absorb.Invoke(magnet, new object[] {naturalAbsorb});
+            Check(magnet.FieldCount == 1 && magnet.PendingAbsorbs == 20,
+                "An active Gravity Field preserves overflow without overlapping another Field");
+            stepMagnet(2f);
+            Check(magnet.IsFieldActive && magnet.FieldCount == 2 && magnet.PendingAbsorbs == 0 &&
+                magnet.PulseCount == 2,
+                "Stored Magnet 6 input starts the next Field immediately after the current Field ends");
+
+            magnet.SetTraitCount(0);
+            Check(!magnet.IsFieldActive && magnet.PendingAbsorbs == 0,
+                "Disabling Magnet clears pending input and active Field work");
+            magnet.SetTraitCount(8);
+            var singularityCore = spawner.Nodes.First(n => n.Definition.kind == OreKind.Core && n != gravityCore);
+            gravityCore.transform.position = new Vector3(500, 500, 0);
+            singularityCore.transform.position = Vector3.right;
+            int pulsesBeforeSingularity = magnet.PulseCount;
+            for (int i = 0; i < 12; i++) absorb.Invoke(magnet, new object[] {naturalAbsorb});
+            int fieldId = magnet.ActiveFieldId;
+            Check(magnet.IsFieldActive && magnet.FieldCount == 3 && magnet.PulseCount == pulsesBeforeSingularity + 1,
+                "Magnet 8 starts SINGULARITY after twelve absorbed Scrap");
+            absorb.Invoke(magnet, new object[] {new ScrapAbsorbInfo(naturalAbsorb.Origin,
+                ScrapAcquireCause.GravityField, fieldId + 1)});
+            Check(magnet.FieldAbsorbedCount == 0,
+                "SINGULARITY ignores Scrap attributed to a different Field");
+            var fieldAbsorb = new ScrapAbsorbInfo(naturalAbsorb.Origin, ScrapAcquireCause.GravityField, fieldId);
+            for (int i = 0; i < 14; i++) absorb.Invoke(magnet, new object[] {fieldAbsorb});
+            Check(magnet.PulseCount == pulsesBeforeSingularity + 1 && magnet.FieldAbsorbedCount == 14,
+                "SINGULARITY waits for fifteen Scrap attributed to its Field");
+            absorb.Invoke(magnet, new object[] {fieldAbsorb});
+            Check(magnet.PulseCount == pulsesBeforeSingularity + 2 && magnet.FieldAbsorbedCount == 15,
+                "SINGULARITY performs its mass-absorption bonus Pulse exactly at fifteen Scrap");
+            stepMagnet(0.99f);
+            Check(magnet.PulseCount == pulsesBeforeSingularity + 2,
+                "SINGULARITY waits one second before its scheduled second Pulse");
+            stepMagnet(0.01f);
+            Check(magnet.PulseCount == pulsesBeforeSingularity + 3 && singularityCore.Health == 2,
+                "SINGULARITY performs exactly two base Pulses plus one capped bonus Pulse");
+
+            magnet.SetTraitCount(0);
+            foreach (var effect in Object.FindObjectsByType<MagnetFieldEffect>(FindObjectsSortMode.None))
                 Object.DestroyImmediate(effect.gameObject);
             Object.DestroyImmediate(root);
         }

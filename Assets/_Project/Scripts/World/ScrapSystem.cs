@@ -9,13 +9,14 @@ namespace ScrapRush.World
         private readonly Queue<ScrapDrop> pool = new Queue<ScrapDrop>();
         private readonly Queue<(float time, int value)> income = new Queue<(float, int)>();
         private readonly List<OreBreakInfo> completed = new List<OreBreakInfo>();
+        private readonly List<ScrapAbsorbInfo> completedDetailed = new List<ScrapAbsorbInfo>();
         private readonly List<ScrapAbsorbEffect> activeEffects = new List<ScrapAbsorbEffect>();
         private readonly Queue<ScrapAbsorbEffect> effectPool = new Queue<ScrapAbsorbEffect>();
         private OreSpawner ores;
         private Transform player;
         private ScrapSettings settings;
         private Material trailMaterial;
-        private float contactRadius, elapsed;
+        private float contactRadius, elapsed, absorbRangeMultiplier = 1f;
         public IReadOnlyList<ScrapDrop> Drops => drops;
         public long Credits { get; private set; }
         public long RecentCredits { get; private set; }
@@ -26,7 +27,12 @@ namespace ScrapRush.World
         public int PeakActiveCount { get; private set; }
         public int PooledCount => pool.Count;
         public event Action<OreBreakInfo> ScrapGenerated;
+        public float EffectiveAbsorbRange => settings == null ? 0f : settings.absorbRange * absorbRangeMultiplier;
         public event Action<OreBreakInfo> Absorbed;
+        public event Action<ScrapAbsorbInfo> AbsorbedDetailed;
+        public event Action<ScrapAcquisitionInfo> AcquisitionStarted;
+        public event Action<ScrapDrop> DropGenerated;
+        public event Action StageCleared;
 
         public void Initialize(OreSpawner spawner, Transform target, ScrapSettings configuration, float radius)
         {
@@ -46,6 +52,7 @@ namespace ScrapRush.World
             Credits = RecentCredits = 0;
             GeneratedCount = AbsorbedCount = ClearedCount = PeakActiveCount = 0;
             elapsed = 0; income.Clear();
+            absorbRangeMultiplier = 1f;
             ores.OreBroken += Spawn;
         }
 
@@ -71,6 +78,35 @@ namespace ScrapRush.World
             GeneratedCount++;
             PeakActiveCount = Mathf.Max(PeakActiveCount, drops.Count);
             ScrapGenerated?.Invoke(info);
+            DropGenerated?.Invoke(drop);
+        }
+
+        public void SetAbsorbRangeMultiplier(float multiplier)
+        {
+            absorbRangeMultiplier = Mathf.Max(0f, multiplier);
+        }
+
+        public int ForceAcquireWithin(Vector2 center, float radius, ScrapAcquireCause cause, int rootEffectId)
+        {
+            if (radius <= 0f) return 0;
+            int acquired = 0;
+            float radiusSquared = radius * radius;
+            for (int i = 0; i < drops.Count; i++)
+            {
+                ScrapDrop drop = drops[i];
+                if (drop == null || ((Vector2)drop.transform.position - center).sqrMagnitude > radiusSquared) continue;
+                if (ForceAcquire(drop, cause, rootEffectId)) acquired++;
+            }
+            return acquired;
+        }
+
+        public bool ForceAcquire(ScrapDrop drop, ScrapAcquireCause cause, int rootEffectId)
+        {
+            if (drop == null || !drops.Contains(drop)) return false;
+            bool beganTracking = drop.ForceAcquire(cause, rootEffectId);
+            if (beganTracking)
+                AcquisitionStarted?.Invoke(new ScrapAcquisitionInfo(drop, cause, rootEffectId));
+            return beganTracking;
         }
 
         private void LateUpdate()
@@ -85,11 +121,19 @@ namespace ScrapRush.World
             elapsed += deltaTime;
             // Commit removal and payment before callbacks; callbacks may spawn or clear drops.
             completed.Clear();
+            completedDetailed.Clear();
             for (int i = drops.Count - 1; i >= 0; i--)
             {
                 var drop = drops[i];
-                if (!drop.Advance(deltaTime, player.position, contactRadius)) continue;
+                Vector2 acquisitionPosition = drop.transform.position;
+                bool absorbed = drop.Advance(deltaTime, player.position, contactRadius, EffectiveAbsorbRange,
+                    out bool beganTracking);
+                if (beganTracking)
+                    AcquisitionStarted?.Invoke(new ScrapAcquisitionInfo(drop, acquisitionPosition,
+                        ScrapAcquireCause.Natural, 0));
+                if (!absorbed) continue;
                 var info = drop.Origin;
+                var absorbInfo = new ScrapAbsorbInfo(info, drop.AcquireCause, drop.AcquireRootEffectId);
                 Vector3 contactPosition = drop.transform.position;
                 drops.RemoveAt(i);
                 Release(drop);
@@ -101,10 +145,15 @@ namespace ScrapRush.World
                 income.Enqueue((elapsed, value));
                 AbsorbedCount++;
                 completed.Add(info);
+                completedDetailed.Add(absorbInfo);
             }
             while (income.Count > 0 && income.Peek().time <= elapsed - 30f)
                 RecentCredits -= income.Dequeue().value;
-            foreach (var info in completed) Absorbed?.Invoke(info);
+            for (int i = 0; i < completed.Count; i++)
+            {
+                Absorbed?.Invoke(completed[i]);
+                AbsorbedDetailed?.Invoke(completedDetailed[i]);
+            }
         }
 
         // Stage transitions discard uncollected value, while keeping session C and telemetry.
@@ -125,6 +174,7 @@ namespace ScrapRush.World
                 effect.Deactivate();
                 effectPool.Enqueue(effect);
             }
+            StageCleared?.Invoke();
         }
 
         private void OnDestroy()

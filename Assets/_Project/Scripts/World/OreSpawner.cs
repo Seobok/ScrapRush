@@ -91,6 +91,20 @@ namespace ScrapRush.World
             return nearest;
         }
 
+        public void CollectAliveWithin(Vector2 position, float range, List<OreNode> results)
+        {
+            if (results == null) throw new ArgumentNullException(nameof(results));
+            results.Clear();
+            if (range <= 0f) return;
+            float rangeSquared = range * range;
+            foreach (var node in nodes)
+            {
+                if (node == null || !node.IsAlive) continue;
+                if (((Vector2)node.transform.position - position).sqrMagnitude <= rangeSquared)
+                    results.Add(node);
+            }
+        }
+
         public void Clear()
         {
             foreach (var node in nodes)

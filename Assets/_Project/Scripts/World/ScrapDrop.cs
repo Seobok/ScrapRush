@@ -7,6 +7,8 @@ namespace ScrapRush.World
     {
         public OreBreakInfo Origin { get; private set; }
         public bool IsTracking { get; private set; }
+        public ScrapAcquireCause AcquireCause { get; private set; }
+        public int AcquireRootEffectId { get; private set; }
         private SpriteRenderer visual;
         private TrailRenderer trail;
         private ScrapSettings settings;
@@ -20,6 +22,8 @@ namespace ScrapRush.World
             age = 0f;
             speed = settings.initialSpeed;
             IsTracking = false;
+            AcquireCause = ScrapAcquireCause.Natural;
+            AcquireRootEffectId = 0;
 
             if (visual == null)
             {
@@ -40,15 +44,20 @@ namespace ScrapRush.World
         }
 
         // Once acquired, keep following even if the player leaves the initial range.
-        public bool Advance(float deltaTime, Vector2 target, float contactRadius)
+        public bool Advance(float deltaTime, Vector2 target, float contactRadius, float acquireRange,
+            out bool beganTracking)
         {
+            beganTracking = false;
             if (deltaTime <= 0) return false;
             age += deltaTime;
             UpdateVisual();
             if (age < settings.spawnDuration) return false;
             Vector2 position = transform.position;
-            if (!IsTracking && (position - target).sqrMagnitude <= settings.absorbRange * settings.absorbRange)
-                BeginTracking();
+            if (!IsTracking && (position - target).sqrMagnitude <= acquireRange * acquireRange)
+            {
+                BeginTracking(ScrapAcquireCause.Natural, 0);
+                beganTracking = true;
+            }
             if (!IsTracking) return false;
             speed = Mathf.Min(settings.maxSpeed, speed + settings.acceleration * deltaTime);
             position = Vector2.MoveTowards(position, target, speed * deltaTime);
@@ -67,15 +76,31 @@ namespace ScrapRush.World
         public void Release()
         {
             IsTracking = false;
+            AcquireCause = ScrapAcquireCause.Natural;
+            AcquireRootEffectId = 0;
             trail.emitting = false;
             trail.Clear();
             trail.enabled = false;
             gameObject.SetActive(false);
         }
 
-        private void BeginTracking()
+        public bool ForceAcquire(ScrapAcquireCause cause, int rootEffectId)
+        {
+            bool beganTracking = !IsTracking;
+            if (beganTracking || cause == ScrapAcquireCause.GravityField)
+            {
+                AcquireCause = cause;
+                AcquireRootEffectId = rootEffectId;
+            }
+            if (beganTracking) BeginTracking(cause, rootEffectId);
+            return beganTracking;
+        }
+
+        private void BeginTracking(ScrapAcquireCause cause, int rootEffectId)
         {
             IsTracking = true;
+            AcquireCause = cause;
+            AcquireRootEffectId = rootEffectId;
             trail.Clear();
             trail.enabled = true;
             trail.emitting = true;

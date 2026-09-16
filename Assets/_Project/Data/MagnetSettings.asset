@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c60b3d88bd1493db5b22dce6f55bf18, type: 3}
+  m_Name: MagnetSettings
+  m_EditorClassIdentifier:
+  absorbRangeMultiplier: 1.4
+  clusterRange: 2.5
+  gravityRequiredAbsorbs: 20
+  gravityRadius: 5
+  gravityDuration: 2
+  gravityDamage: 1
+  singularityRequiredAbsorbs: 12
+  singularityRadius: 8
+  singularitySecondPulseTime: 1
+  singularityMassAbsorbs: 15
+  fieldLineWidth: 0.08
+  fieldColor: {r: 0.75, g: 0.35, b: 1, a: 0.9}
+  fieldSound: {fileID: 0}
+  fieldVolume: 0.5
