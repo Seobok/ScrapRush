@@ -86,6 +86,24 @@ namespace ScrapRush.World
             absorbRangeMultiplier = Mathf.Max(0f, multiplier);
         }
 
+        public void ResetRun()
+        {
+            ResetStage();
+            GeneratedCount = 0;
+            AbsorbedCount = 0;
+            ClearedCount = 0;
+            PeakActiveCount = 0;
+        }
+
+        public void ResetStage()
+        {
+            ClearStage();
+            Credits = 0;
+            RecentCredits = 0;
+            elapsed = 0f;
+            income.Clear();
+        }
+
         public int ForceAcquireWithin(Vector2 center, float radius, ScrapAcquireCause cause, int rootEffectId)
         {
             if (radius <= 0f) return 0;

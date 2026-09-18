@@ -389,6 +389,7 @@ MonoBehaviour:
   sectorPrefab: {fileID: 1003, guid: 65e2a7cc1ee846c8ade004a2ddc38bd6, type: 3}
   orePrefab: {fileID: 1003, guid: c19e313cefe95b5bb1f7b737b7dc9b3f, type: 3}
   oreSpawnSettings: {fileID: 11400000, guid: bd3802616a9652e7be71dd6bc1ff8554, type: 2}
+  stageSettings: {fileID: 11400000, guid: 3e854ef88d93424fbc390a5bb355870b, type: 2}
   scrapSettings: {fileID: 11400000, guid: 9de241f9638446ccbe5d51086eef65f0, type: 2}
   magnetSettings: {fileID: 11400000, guid: f5c8176f516742738251bb984d3aa12c, type: 2}
   electricSettings: {fileID: 11400000, guid: d94826a11f4a4d0893959fc91f68a3a7, type: 2}

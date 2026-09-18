@@ -12,6 +12,7 @@ namespace ScrapRush.Core
         [SerializeField] private SectorDefinition sectorPrefab = null;
         [SerializeField] private OreNode orePrefab = null;
         [SerializeField] private OreSpawnSettings oreSpawnSettings = null;
+        [SerializeField] private StageSettings stageSettings = null;
 
         [SerializeField] private ScrapSettings scrapSettings = null;
         [SerializeField] private MagnetSettings magnetSettings = null;
@@ -20,9 +21,10 @@ namespace ScrapRush.Core
         private void Awake()
         {
             if (settings == null || playerPrefab == null || sectorPrefab == null || orePrefab == null ||
-                oreSpawnSettings == null || scrapSettings == null || magnetSettings == null || electricSettings == null)
+                oreSpawnSettings == null || stageSettings == null || scrapSettings == null ||
+                magnetSettings == null || electricSettings == null)
             {
-                Debug.LogError("Core settings, Player/Sector/Ore prefabs and Ore/Scrap settings are required.", this);
+                Debug.LogError("Core, Stage, Ore, Scrap, Magnet and Electric settings are required.", this);
                 enabled = false;
                 return;
             }
@@ -55,6 +57,9 @@ namespace ScrapRush.Core
             var follow = camera.GetComponent<CameraFollow>();
             if (follow == null) follow = camera.gameObject.AddComponent<CameraFollow>();
             follow.Initialize(player.transform, world.Bounds, settings.cameraSize, settings.cameraSmoothTime);
+            var stage = CreateChild("StageController").AddComponent<StageController>();
+            stage.Initialize(stageSettings, ores, scraps, player, magnet, electric);
+            CreateChild("StageHUD").AddComponent<StageHud>().Initialize(stage);
             CreateChild("DebugHUD").AddComponent<CorePlayDebugHud>().Initialize(world, player.transform, ores,
                 scraps, magnet, electric);
         }

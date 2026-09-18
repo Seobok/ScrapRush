@@ -90,6 +90,19 @@ namespace ScrapRush.Player
             }
         }
 
+        public void ResetStageState()
+        {
+            ready = false;
+            cooldownRemaining = ActiveTier > 0 && settings != null ? settings.cooldown : 0f;
+            stormShotsRemaining = 0;
+            stormShotTimer = 0f;
+            stormUsesChain = false;
+            stormValueModifier = 0f;
+            stormRootEffectId = 0;
+            stormDischargeIndex = 0;
+            ReadyHeldSeconds = 0f;
+        }
+
         private void LateUpdate()
         {
             if (ores == null || !Application.isFocused || Time.timeScale == 0) return;

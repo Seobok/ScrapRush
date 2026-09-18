@@ -22,6 +22,13 @@ namespace ScrapRush.Player
             TargetChanges = HitCount = 0;
         }
 
+        public void ResetStageState()
+        {
+            if (Target != null) Target.SetSelected(false);
+            Target = null;
+            cooldown = 0f;
+        }
+
         // PlayerMotor moves in Update; select from the resulting position in LateUpdate.
         private void LateUpdate()
         {

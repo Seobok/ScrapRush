@@ -7,21 +7,24 @@ namespace ScrapRush.World
     public sealed class OreSpawner : MonoBehaviour
     {
         private readonly List<OreNode> nodes = new List<OreNode>();
+        private SectorWorld world;
+        private OreNode prefab;
+        private OreSpawnSettings settings;
         public IReadOnlyList<OreNode> Nodes => nodes;
         public int BrokenCount { get; private set; }
         public int SkippedCount { get; private set; }
         public event Action<OreBreakInfo> OreBroken;
 
-        public void Initialize(SectorWorld world, OreNode prefab, OreSpawnSettings settings)
+        public void Initialize(SectorWorld sectorWorld, OreNode orePrefab, OreSpawnSettings configuration)
         {
-            Clear();
-            if (settings.ores == null || settings.ores.Length == 0 ||
-                settings.minClusters < 1 || settings.maxClusters < settings.minClusters ||
-                settings.minOresPerCluster < 1 || settings.maxOresPerCluster < settings.minOresPerCluster ||
-                settings.clusterRadius <= 0 || settings.placementAttempts < 1)
+            if (sectorWorld == null || orePrefab == null || configuration == null ||
+                configuration.ores == null || configuration.ores.Length == 0 ||
+                configuration.minClusters < 1 || configuration.maxClusters < configuration.minClusters ||
+                configuration.minOresPerCluster < 1 || configuration.maxOresPerCluster < configuration.minOresPerCluster ||
+                configuration.clusterRadius <= 0 || configuration.placementAttempts < 1)
                 throw new ArgumentException("Invalid ore spawn settings.");
             int totalWeight = 0;
-            foreach (var entry in settings.ores)
+            foreach (var entry in configuration.ores)
             {
                 if (entry.definition == null || entry.definition.sprite == null || entry.weight < 0 ||
                     entry.definition.maxHealth < 1 || entry.definition.collisionRadius <= 0)
@@ -29,6 +32,25 @@ namespace ScrapRush.World
                 totalWeight += entry.weight;
             }
             if (totalWeight <= 0) throw new ArgumentException("Ore spawn weights must have a positive total.");
+
+            world = sectorWorld;
+            prefab = orePrefab;
+            settings = configuration;
+            SpawnAll(totalWeight);
+        }
+
+        public void ResetStage()
+        {
+            if (world == null || prefab == null || settings == null)
+                throw new InvalidOperationException("OreSpawner must be initialized before a stage reset.");
+            int totalWeight = 0;
+            foreach (var entry in settings.ores) totalWeight += entry.weight;
+            SpawnAll(totalWeight);
+        }
+
+        private void SpawnAll(int totalWeight)
+        {
+            Clear();
 
             var random = new System.Random(settings.seed);
             for (int row = 0; row < SectorWorld.GridSize; row++)

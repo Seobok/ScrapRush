@@ -49,6 +49,7 @@ namespace ScrapRush.Editor
                 ValidateElectric();
                 ValidateScrap(spawner);
                 ValidateMagnet();
+                ValidateStage();
                 File.WriteAllLines(Path.Combine(Root, "mining-validation.txt"), Passed);
                 Debug.Log("MINING VALIDATION PASSED: " + Passed.Count);
                 EditorApplication.Exit(0);
@@ -532,6 +533,51 @@ namespace ScrapRush.Editor
             foreach (var effect in Object.FindObjectsByType<MagnetFieldEffect>(FindObjectsSortMode.None))
                 Object.DestroyImmediate(effect.gameObject);
             Object.DestroyImmediate(root);
+        }
+
+        private static void ValidateStage()
+        {
+            var stage = Object.FindFirstObjectByType<StageController>();
+            var settings = AssetDatabase.LoadAssetAtPath<StageSettings>("Assets/_Project/Data/StageSettings.asset");
+            var ores = Object.FindFirstObjectByType<OreSpawner>();
+            var scraps = Object.FindFirstObjectByType<ScrapSystem>();
+            var player = Object.FindFirstObjectByType<PlayerMotor>();
+            var miner = Object.FindFirstObjectByType<PlayerAutoMiner>();
+            var magnet = Object.FindFirstObjectByType<MagnetSystem>();
+            var electric = Object.FindFirstObjectByType<ElectricSystem>();
+            Check(stage != null && settings != null && settings.duration == 30f && settings.quota == 300 &&
+                settings.quotaIncreasePerStage == 300 && settings.capacity == 4 &&
+                settings.capacityIncreasePerStage == 1 && settings.maximumCapacity == 10 &&
+                stage.StageNumber == 1 && stage.State == StageState.Playing,
+                "Stage loop starts automatically with the P0-B 30 second, 300 C, Capacity 4 profile");
+
+            var tick = typeof(StageController).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
+            Check(scraps.Credits >= settings.quota,
+                "Core validation income provides a deterministic successful Stage result");
+            tick.Invoke(stage, new object[] {settings.duration});
+            Check(stage.State == StageState.Success && stage.RemainingTime == 0f && scraps.Drops.Count == 0 &&
+                !player.enabled && !miner.enabled && !scraps.enabled && !magnet.enabled && !electric.enabled &&
+                !magnet.IsFieldActive && electric.StormShotsRemaining == 0,
+                "Stage success freezes gameplay and clears Scrap, Gravity Field and Electric Storm state");
+
+            stage.StartNextStage();
+            Check(stage.State == StageState.Playing && stage.StageNumber == 2 && stage.Quota == 600 &&
+                stage.Capacity == 5 && scraps.Credits == 0 && scraps.RecentCredits == 0 &&
+                ores.Nodes.Count > 100,
+                "Stage success advances with fresh Scrap progress and data-driven quota and Capacity growth");
+
+            stage.StartRun();
+            Check(stage.State == StageState.Playing && stage.RemainingTime == settings.duration &&
+                scraps.Credits == 0 && scraps.RecentCredits == 0 && scraps.Drops.Count == 0 &&
+                ores.Nodes.Count > 100 && player.transform.position == Vector3.zero &&
+                player.enabled && miner.enabled && scraps.enabled && magnet.enabled && electric.enabled &&
+                !magnet.IsFieldActive && electric.StormShotsRemaining == 0,
+                "Restart begins a clean deterministic Stage with fresh ore and no leaked gameplay state");
+
+            tick.Invoke(stage, new object[] {settings.duration});
+            Check(stage.State == StageState.Failure && stage.CurrentCredits == 0 && scraps.Drops.Count == 0,
+                "A Stage that reaches zero time below quota enters the failure result");
+            stage.StartRun();
         }
     }
 }
