@@ -52,31 +52,33 @@ namespace ScrapRush.Debugging
                 GUI.color = previous;
             }
             Vector2Int sector = world.GetSector(player.position);
-            GUI.Box(new Rect(12, 12, 510, 394), "CORE PLAY TEST / SCRAP / MAGNET / ELECTRIC");
+            GUI.Box(new Rect(12, 12, 510, 418), "CORE PLAY TEST / SCRAP / MAGNET / ELECTRIC");
             GUI.Label(new Rect(24, 38, 480, 24), "WASD : Move | Electric top row 0/2/4/6 | Magnet numpad 0/2/4/6/8");
             GUI.Label(new Rect(24, 62, 280, 24), $"Sector {SectorWorld.GetSectorName(sector.x, sector.y)}    Position {player.position.x:F1}, {player.position.y:F1}");
-            GUI.Label(new Rect(24, 86, 340, 24), $"Ores {ores.Nodes.Count} | Broken {ores.BrokenCount} | Hits {miner.HitCount}");
+            OreSpawner.SectorSupplyMetrics supply = ores.GetSectorMetrics(sector.x, sector.y);
+            GUI.Label(new Rect(24, 86, 480, 24), $"Ores {ores.Nodes.Count} | Spawned {ores.SpawnedCount} | Broken {ores.BrokenCount} | Hits {miner.HitCount}");
             var target = miner.Target;
             GUI.Label(new Rect(24, 110, 340, 24), target != null && target.IsAlive
                 ? $"Target {target.Definition.kind} | HP {target.Health}/{target.Definition.maxHealth}"
                 : "Target: none (move within 1.4 units)");
-            GUI.Label(new Rect(24, 134, 340, 24), $"Target changes {miner.TargetChanges} | Skipped spawns {ores.SkippedCount}");
-            GUI.Label(new Rect(24, 158, 400, 24), $"C {scraps.Credits} | Last 30s {scraps.RecentCredits} C | {scraps.CreditsPerSecond:F1} C/s");
-            GUI.Label(new Rect(24, 182, 400, 24), $"Scrap generated {scraps.GeneratedCount} | Absorbed {scraps.AbsorbedCount}");
-            GUI.Label(new Rect(24, 206, 400, 24), $"Remaining {scraps.Drops.Count} | Peak {scraps.PeakActiveCount} | Cleared {scraps.ClearedCount}");
+            GUI.Label(new Rect(24, 134, 480, 24), $"{supply.Profile} {supply.Current}/{supply.Target} cap {supply.SpawnCap} | Sector empty {supply.EmptyTime:F1}s | World empty {ores.EmptyTime:F1}s");
+            GUI.Label(new Rect(24, 158, 480, 24), $"Target changes {miner.TargetChanges} | Skipped spawns {ores.SkippedCount}");
+            GUI.Label(new Rect(24, 182, 400, 24), $"C {scraps.Credits} | Last 30s {scraps.RecentCredits} C | {scraps.CreditsPerSecond:F1} C/s");
+            GUI.Label(new Rect(24, 206, 400, 24), $"Scrap generated {scraps.GeneratedCount} | Absorbed {scraps.AbsorbedCount}");
+            GUI.Label(new Rect(24, 230, 400, 24), $"Remaining {scraps.Drops.Count} | Peak {scraps.PeakActiveCount} | Cleared {scraps.ClearedCount}");
             if (magnet != null)
             {
                 string field = magnet.IsFieldActive ? $"Field {magnet.ActiveFieldId} {magnet.FieldRemaining:F1}s" : "Field idle";
-                GUI.Label(new Rect(24, 230, 470, 24), $"Magnet {magnet.TraitCount} / Tier {magnet.ActiveTier} | Absorb {magnet.PendingAbsorbs}/{magnet.RequiredAbsorbs} | {field}");
-                GUI.Label(new Rect(24, 254, 470, 24), $"Fields {magnet.FieldCount} | Pulses {magnet.PulseCount} | Field absorbed {magnet.FieldAbsorbedCount}");
-                GUI.Label(new Rect(24, 278, 470, 24), $"Gravity hits {magnet.PulseHitCount} | Broken {magnet.PulseBrokenCount} | Cluster pulls {magnet.ClusterAcquiredCount}");
+                GUI.Label(new Rect(24, 254, 470, 24), $"Magnet {magnet.TraitCount} / Tier {magnet.ActiveTier} | Absorb {magnet.PendingAbsorbs}/{magnet.RequiredAbsorbs} | {field}");
+                GUI.Label(new Rect(24, 278, 470, 24), $"Fields {magnet.FieldCount} | Pulses {magnet.PulseCount} | Field absorbed {magnet.FieldAbsorbedCount}");
+                GUI.Label(new Rect(24, 302, 470, 24), $"Gravity hits {magnet.PulseHitCount} | Broken {magnet.PulseBrokenCount} | Cluster pulls {magnet.ClusterAcquiredCount}");
             }
             if (electric != null)
             {
                 string charge = electric.IsReady ? "READY" : $"{electric.CooldownRemaining:F1}s";
-                GUI.Label(new Rect(24, 302, 470, 24), $"Electric {electric.TraitCount} / Tier {electric.ActiveTier} | Charge {charge} | Storm shots {electric.StormShotsRemaining}");
-                GUI.Label(new Rect(24, 326, 470, 24), $"Static {electric.StaticTriggerCount} | Storm {electric.StormCount} | Discharges {electric.DischargeCount}");
-                GUI.Label(new Rect(24, 350, 470, 24), $"Electric hits {electric.HitCount} | Chain hits {electric.ChainHitCount} | Broken {electric.BrokenCount}");
+                GUI.Label(new Rect(24, 326, 470, 24), $"Electric {electric.TraitCount} / Tier {electric.ActiveTier} | Charge {charge} | Storm shots {electric.StormShotsRemaining}");
+                GUI.Label(new Rect(24, 350, 470, 24), $"Static {electric.StaticTriggerCount} | Storm {electric.StormCount} | Discharges {electric.DischargeCount}");
+                GUI.Label(new Rect(24, 374, 470, 24), $"Electric hits {electric.HitCount} | Chain hits {electric.ChainHitCount} | Broken {electric.BrokenCount}");
             }
             const float cell = 38;
             float left = Mathf.Max(12, Screen.width - 3 * cell - 20);

@@ -44,6 +44,7 @@ namespace ScrapRush.Editor
             try
             {
                 Validate(spawner);
+                ValidateRefill();
                 ValidateTargetEffect();
                 ValidateMiningHit(spawner);
                 ValidateElectric();
@@ -235,6 +236,62 @@ namespace ScrapRush.Editor
             effectTick.Invoke(effect, new object[] {1f / 24f});
             Check(!renderer.enabled, "MiningHit stops after one playback and schedules cleanup");
             Object.DestroyImmediate(effect.gameObject);
+        }
+
+        private static void ValidateRefill()
+        {
+            var world = Object.FindFirstObjectByType<SectorWorld>();
+            var prefab = AssetDatabase.LoadAssetAtPath<OreNode>("Assets/_Project/Prefabs/World/Ore.prefab");
+            var settings = AssetDatabase.LoadAssetAtPath<OreSpawnSettings>("Assets/_Project/Data/OreSpawnSettings.asset");
+            Check(settings.profiles.Select(p => p.kind).OrderBy(k => k).SequenceEqual(
+                    new[] {SectorResourceProfile.Stable, SectorResourceProfile.Dense, SectorResourceProfile.HighValue}) &&
+                settings.profiles.All(p => p.targetOreCount > 0 && p.spawnCap >= p.targetOreCount &&
+                    p.refillInterval > 0f) && settings.sectorProfiles.Length == 9,
+                "STABLE, DENSE and HIGH_VALUE sector profiles data-drive target, cap and refill interval");
+
+            var first = new GameObject("Refill First").AddComponent<OreSpawner>();
+            var second = new GameObject("Refill Second").AddComponent<OreSpawner>();
+            first.Initialize(world, prefab, settings);
+            second.Initialize(world, prefab, settings);
+            Check(Enumerable.Range(0, 9).All(index =>
+            {
+                OreSpawner.SectorSupplyMetrics metrics = first.GetSectorMetrics(index % 3, index / 3);
+                OreSpawnSettings.ResourceProfile profile = settings.profiles.First(p => p.kind == metrics.Profile);
+                return metrics.Current >= profile.targetOreCount && metrics.Current <= profile.spawnCap;
+            }), "Initial cluster supply reaches TargetOreCount without exceeding SpawnCap");
+            Check(first.Nodes.Count == second.Nodes.Count && first.Nodes.Select((node, index) =>
+                    node.Definition == second.Nodes[index].Definition &&
+                    node.transform.position == second.Nodes[index].transform.position).All(match => match),
+                "Sector profile placement remains deterministic for the same seed");
+
+            OreNode[] firstSector = first.Nodes.Where(node => world.GetSector(node.transform.position) == Vector2Int.zero).ToArray();
+            OreNode[] secondSector = second.Nodes.Where(node => world.GetSector(node.transform.position) == Vector2Int.zero).ToArray();
+            foreach (var node in firstSector) node.ApplyDamage(node.Definition.maxHealth, MiningSource.Basic);
+            foreach (var node in secondSector) node.ApplyDamage(node.Definition.maxHealth, MiningSource.Basic);
+            OreSpawner.SectorSupplyMetrics empty = first.GetSectorMetrics(0, 0);
+            Check(empty.Current == 0 && empty.Destroyed == firstSector.Length,
+                "Sector supply telemetry records current and destroyed ore counts");
+
+            var tick = typeof(OreSpawner).GetMethod("Tick", BindingFlags.Instance | BindingFlags.NonPublic);
+            var stable = settings.profiles.First(profile => profile.kind == SectorResourceProfile.Stable);
+            tick.Invoke(first, new object[] {stable.refillInterval});
+            tick.Invoke(second, new object[] {stable.refillInterval});
+            OreSpawner.SectorSupplyMetrics refilled = first.GetSectorMetrics(0, 0);
+            Check(refilled.Current > 0 && refilled.Current <= refilled.SpawnCap &&
+                Mathf.Approximately(refilled.EmptyTime, stable.refillInterval),
+                "An empty sector refills by cluster on schedule without exceeding SpawnCap and records EmptyTime");
+            Check(first.Nodes.Count == second.Nodes.Count && first.Nodes.Select((node, index) =>
+                    node.Definition == second.Nodes[index].Definition &&
+                    node.transform.position == second.Nodes[index].transform.position).All(match => match),
+                "The same seed and destruction sequence reproduce identical refill ore types and positions");
+            Check(Enumerable.Range(0, 9).All(index =>
+            {
+                OreSpawner.SectorSupplyMetrics metrics = first.GetSectorMetrics(index % 3, index / 3);
+                return metrics.Current <= metrics.SpawnCap;
+            }), "Every sector respects its profile SpawnCap");
+
+            Object.DestroyImmediate(first.gameObject);
+            Object.DestroyImmediate(second.gameObject);
         }
 
         private static void ValidateTargetEffect()
@@ -556,7 +613,7 @@ namespace ScrapRush.Editor
                 "Core validation income provides a deterministic successful Stage result");
             tick.Invoke(stage, new object[] {settings.duration});
             Check(stage.State == StageState.Success && stage.RemainingTime == 0f && scraps.Drops.Count == 0 &&
-                !player.enabled && !miner.enabled && !scraps.enabled && !magnet.enabled && !electric.enabled &&
+                !ores.enabled && !player.enabled && !miner.enabled && !scraps.enabled && !magnet.enabled && !electric.enabled &&
                 !magnet.IsFieldActive && electric.StormShotsRemaining == 0,
                 "Stage success freezes gameplay and clears Scrap, Gravity Field and Electric Storm state");
 
@@ -570,7 +627,7 @@ namespace ScrapRush.Editor
             Check(stage.State == StageState.Playing && stage.RemainingTime == settings.duration &&
                 scraps.Credits == 0 && scraps.RecentCredits == 0 && scraps.Drops.Count == 0 &&
                 ores.Nodes.Count > 100 && player.transform.position == Vector3.zero &&
-                player.enabled && miner.enabled && scraps.enabled && magnet.enabled && electric.enabled &&
+                ores.enabled && player.enabled && miner.enabled && scraps.enabled && magnet.enabled && electric.enabled &&
                 !magnet.IsFieldActive && electric.StormShotsRemaining == 0,
                 "Restart begins a clean deterministic Stage with fresh ore and no leaked gameplay state");
 

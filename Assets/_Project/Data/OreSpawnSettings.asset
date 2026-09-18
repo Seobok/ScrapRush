@@ -21,6 +21,32 @@ MonoBehaviour:
     weight: 10
   - definition: {fileID: 11400000, guid: d113beead1ca5eb4a0509045fb2b87bc, type: 2}
     weight: 3
+  profiles:
+  - kind: 0
+    targetOreCount: 18
+    spawnCap: 24
+    refillInterval: 2
+    highValueWeightMultiplier: 1
+  - kind: 1
+    targetOreCount: 28
+    spawnCap: 36
+    refillInterval: 1.5
+    highValueWeightMultiplier: 1
+  - kind: 2
+    targetOreCount: 14
+    spawnCap: 20
+    refillInterval: 2.5
+    highValueWeightMultiplier: 3
+  sectorProfiles:
+  - 0
+  - 1
+  - 2
+  - 1
+  - 0
+  - 1
+  - 2
+  - 1
+  - 0
   seed: 903
   minClusters: 2
   maxClusters: 4
@@ -30,3 +56,4 @@ MonoBehaviour:
   sectorMargin: 1.2
   spacing: 0.12
   placementAttempts: 40
+  allowNewRefillAnchors: 0

@@ -123,6 +123,7 @@ namespace ScrapRush.Core
 
         private void SetGameplayEnabled(bool value)
         {
+            if (ores != null) ores.enabled = value;
             if (player != null) player.enabled = value;
             if (miner != null) miner.enabled = value;
             if (scraps != null) scraps.enabled = value;
