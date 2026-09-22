@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: d192735aac8f1214b90e17e1b1842721
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3741934022373831534
+    second: UI_TRT_001_TraitRow_v01_0
+  - first:
+      213: 605815133642559106
+    second: UI_TRT_001_TraitRow_v01_1
+  - first:
+      213: 5841814493743554362
+    second: UI_TRT_001_TraitRow_v01_2
+  - first:
+      213: 715098077216067424
+    second: UI_TRT_001_TraitRow_v01_3
+  - first:
+      213: 4933553355249715219
+    second: UI_TRT_001_TraitRow_v01_4
+  - first:
+      213: 7165925132232839710
+    second: UI_TRT_001_TraitRow_v01_5
+  - first:
+      213: 2295992139112627990
+    second: UI_TRT_001_TraitRow_v01_6
+  - first:
+      213: 8025717811386745280
+    second: UI_TRT_001_TraitRow_v01_7
+  - first:
+      213: -5839418739109971302
+    second: UI_TRT_001_TraitRow_v01_8
+  - first:
+      213: 2707551433120909640
+    second: UI_TRT_001_TraitRow_v01_9
+  - first:
+      213: -6659425654418857771
+    second: UI_TRT_001_TraitRow_v01_10
+  - first:
+      213: -6716197759874166696
+    second: UI_TRT_001_TraitRow_v01_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_TRT_001_TraitRow_v01_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 695
+        width: 1578
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e637a80fa250ee330800000000000000
+      internalID: 3741934022373831534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_001_TraitRow_v01_1
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 265
+        width: 1581
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e025087a9486800800000000000000
+      internalID: 605815133642559106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_001_TraitRow_v01_2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 46
+        width: 521
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3f105fa45b421150800000000000000
+      internalID: 5841814493743554362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_001_TraitRow_v01_3
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 241
+        width: 136
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06f470899e98ce900800000000000000
+      internalID: 715098077216067424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_001_TraitRow_v01_4
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 256
+        width: 365
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 318881433a0877440800000000000000
+      internalID: 4933553355249715219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_001_TraitRow_v01_5
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 240
+        width: 152
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1258c9e0fa727360800000000000000
+      internalID: 7165925132232839710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_001_TraitRow_v01_6
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 157
+        width: 33
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61fb5e29fa00ddf10800000000000000
+      internalID: 2295992139112627990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_001_TraitRow_v01_7
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 43
+        width: 139
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c18b3fc3d3116f60800000000000000
+      internalID: 8025717811386745280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_001_TraitRow_v01_8
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 115
+        width: 499
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9a3798689736fea0800000000000000
+      internalID: -5839418739109971302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_001_TraitRow_v01_9
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 44
+        width: 153
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8498546eea7239520800000000000000
+      internalID: 2707551433120909640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_001_TraitRow_v01_10
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 22
+        width: 49
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d0ad3486a7f493a0800000000000000
+      internalID: -6659425654418857771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_001_TraitRow_v01_11
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 43
+        width: 361
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8501d69a8b54bc2a0800000000000000
+      internalID: -6716197759874166696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      UI_TRT_001_TraitRow_v01_0: 3741934022373831534
+      UI_TRT_001_TraitRow_v01_1: 605815133642559106
+      UI_TRT_001_TraitRow_v01_10: -6659425654418857771
+      UI_TRT_001_TraitRow_v01_11: -6716197759874166696
+      UI_TRT_001_TraitRow_v01_2: 5841814493743554362
+      UI_TRT_001_TraitRow_v01_3: 715098077216067424
+      UI_TRT_001_TraitRow_v01_4: 4933553355249715219
+      UI_TRT_001_TraitRow_v01_5: 7165925132232839710
+      UI_TRT_001_TraitRow_v01_6: 2295992139112627990
+      UI_TRT_001_TraitRow_v01_7: 8025717811386745280
+      UI_TRT_001_TraitRow_v01_8: -5839418739109971302
+      UI_TRT_001_TraitRow_v01_9: 2707551433120909640
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

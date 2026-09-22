@@ -59,7 +59,17 @@ namespace ScrapRush.Core
             follow.Initialize(player.transform, world.Bounds, settings.cameraSize, settings.cameraSmoothTime);
             var stage = CreateChild("StageController").AddComponent<StageController>();
             stage.Initialize(stageSettings, ores, scraps, player, magnet, electric);
-            CreateChild("StageHUD").AddComponent<StageHud>().Initialize(stage);
+            GameObject hudObject = GameObject.Find("HUD_TopPressureBar");
+            if (hudObject == null)
+            {
+                Debug.LogError("HUD_TopPressureBar must be present in the gameplay scene.", this);
+            }
+            else
+            {
+                var hud = hudObject.GetComponent<StageHud>();
+                if (hud == null) hud = hudObject.AddComponent<StageHud>();
+                hud.Initialize(stage);
+            }
             CreateChild("DebugHUD").AddComponent<CorePlayDebugHud>().Initialize(world, player.transform, ores,
                 scraps, magnet, electric);
         }
