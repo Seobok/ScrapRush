@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: f1bb28440cc54744da1cba471379e015
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3125585566551116227
+    second: ICO_TRT_001_Magnet_v01_0
+  - first:
+      213: 6754276168232016074
+    second: ICO_TRT_001_Magnet_v01_1
+  - first:
+      213: 390946254932083124
+    second: ICO_TRT_001_Magnet_v01_2
+  - first:
+      213: 7511945106800697579
+    second: ICO_TRT_001_Magnet_v01_3
+  - first:
+      213: 2393949610020704797
+    second: ICO_TRT_001_Magnet_v01_4
+  - first:
+      213: 6881743803943133492
+    second: ICO_TRT_001_Magnet_v01_5
+  - first:
+      213: -8738124357359271983
+    second: ICO_TRT_001_Magnet_v01_6
+  - first:
+      213: -4602851899051326066
+    second: ICO_TRT_001_Magnet_v01_7
+  - first:
+      213: 5465815093069886701
+    second: ICO_TRT_001_Magnet_v01_8
+  - first:
+      213: -2942034200515830815
+    second: ICO_TRT_001_Magnet_v01_9
+  - first:
+      213: -1976454519227671729
+    second: ICO_TRT_001_Magnet_v01_10
+  - first:
+      213: -702688539102687210
+    second: ICO_TRT_001_Magnet_v01_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ICO_TRT_001_Magnet_v01_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 0
+        width: 1185
+        height: 1240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d36f1aebc70bf94d0800000000000000
+      internalID: -3125585566551116227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_001_Magnet_v01_1
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 1196
+        width: 78
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac81b5aa3620cbd50800000000000000
+      internalID: 6754276168232016074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_001_Magnet_v01_2
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1239
+        width: 122
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b10f7b2c8bec6500800000000000000
+      internalID: 390946254932083124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_001_Magnet_v01_3
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 1211
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be0e61f464acf3860800000000000000
+      internalID: 7511945106800697579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_001_Magnet_v01_4
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 1083
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1218739c74093120800000000000000
+      internalID: 2393949610020704797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_001_Magnet_v01_5
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 152
+        width: 9
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 431a645578dd08f50800000000000000
+      internalID: 6881743803943133492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_001_Magnet_v01_6
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 168
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1df796c8132fbb680800000000000000
+      internalID: -8738124357359271983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_001_Magnet_v01_7
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 146
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e854053b5926f10c0800000000000000
+      internalID: -4602851899051326066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_001_Magnet_v01_8
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 154
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de436663ed97adb40800000000000000
+      internalID: 5465815093069886701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_001_Magnet_v01_9
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 147
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eb14317b7bcb27d0800000000000000
+      internalID: -2942034200515830815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_001_Magnet_v01_10
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 71
+        width: 9
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4b18b226193294e0800000000000000
+      internalID: -1976454519227671729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_001_Magnet_v01_11
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 53
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 610db072f7c8f36f0800000000000000
+      internalID: -702688539102687210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ICO_TRT_001_Magnet_v01_0: -3125585566551116227
+      ICO_TRT_001_Magnet_v01_1: 6754276168232016074
+      ICO_TRT_001_Magnet_v01_10: -1976454519227671729
+      ICO_TRT_001_Magnet_v01_11: -702688539102687210
+      ICO_TRT_001_Magnet_v01_2: 390946254932083124
+      ICO_TRT_001_Magnet_v01_3: 7511945106800697579
+      ICO_TRT_001_Magnet_v01_4: 2393949610020704797
+      ICO_TRT_001_Magnet_v01_5: 6881743803943133492
+      ICO_TRT_001_Magnet_v01_6: -8738124357359271983
+      ICO_TRT_001_Magnet_v01_7: -4602851899051326066
+      ICO_TRT_001_Magnet_v01_8: 5465815093069886701
+      ICO_TRT_001_Magnet_v01_9: -2942034200515830815
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

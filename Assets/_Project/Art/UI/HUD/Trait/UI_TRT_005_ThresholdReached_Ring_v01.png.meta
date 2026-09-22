@@ -1,0 +1,386 @@
+fileFormatVersion: 2
+guid: 78d8c06d8d962b543a8a6b1e17eb7686
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9168102475743526838
+    second: UI_TRT_005_ThresholdReached_Ring_v01_0
+  - first:
+      213: 5241743348565408985
+    second: UI_TRT_005_ThresholdReached_Ring_v01_1
+  - first:
+      213: -1407059212879122229
+    second: UI_TRT_005_ThresholdReached_Ring_v01_2
+  - first:
+      213: 1459152039436194099
+    second: UI_TRT_005_ThresholdReached_Ring_v01_3
+  - first:
+      213: -7451074643371702331
+    second: UI_TRT_005_ThresholdReached_Ring_v01_4
+  - first:
+      213: 3143695047649922467
+    second: UI_TRT_005_ThresholdReached_Ring_v01_5
+  - first:
+      213: 5260028533987964907
+    second: UI_TRT_005_ThresholdReached_Ring_v01_6
+  - first:
+      213: -5174494602371887994
+    second: UI_TRT_005_ThresholdReached_Ring_v01_7
+  - first:
+      213: -757416707997353365
+    second: UI_TRT_005_ThresholdReached_Ring_v01_8
+  - first:
+      213: -1437936031626824194
+    second: UI_TRT_005_ThresholdReached_Ring_v01_9
+  - first:
+      213: 1005740439932041697
+    second: UI_TRT_005_ThresholdReached_Ring_v01_10
+  - first:
+      213: -3930634752992324309
+    second: UI_TRT_005_ThresholdReached_Ring_v01_11
+  - first:
+      213: 3445874211415001507
+    second: UI_TRT_005_ThresholdReached_Ring_v01_12
+  - first:
+      213: 8147517371137084186
+    second: UI_TRT_005_ThresholdReached_Ring_v01_13
+  - first:
+      213: 7762525894016545126
+    second: UI_TRT_005_ThresholdReached_Ring_v01_14
+  - first:
+      213: 8483922000551731349
+    second: UI_TRT_005_ThresholdReached_Ring_v01_15
+  - first:
+      213: 477549324926952373
+    second: UI_TRT_005_ThresholdReached_Ring_v01_16
+  - first:
+      213: -4337457636770765754
+    second: UI_TRT_005_ThresholdReached_Ring_v01_17
+  - first:
+      213: 277262723790950760
+    second: UI_TRT_005_ThresholdReached_Ring_v01_18
+  - first:
+      213: -8926960771356914903
+    second: UI_TRT_005_ThresholdReached_Ring_v01_19
+  - first:
+      213: -1114357734694904131
+    second: UI_TRT_005_ThresholdReached_Ring_v01_20
+  - first:
+      213: -7554658369720649315
+    second: UI_TRT_005_ThresholdReached_Ring_v01_21
+  - first:
+      213: -1091838643922417755
+    second: UI_TRT_005_ThresholdReached_Ring_v01_22
+  - first:
+      213: 549192705402097889
+    second: UI_TRT_005_ThresholdReached_Ring_v01_23
+  - first:
+      213: -4372177772739359208
+    second: UI_TRT_005_ThresholdReached_Ring_v01_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_TRT_005_ThresholdReached_Ring_v01_0
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 56
+        width: 1187
+        height: 1161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf721380a4ab3f70800000000000000
+      internalID: 9168102475743526838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_005_ThresholdReached_Ring_v01_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 207
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2383ddb9a1b099948adbf4dbce3067e5
+      internalID: 1953000308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_005_ThresholdReached_Ring_v01_9
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 209
+        width: 7
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75bd34ca3de41cc49b80c6f28f990e81
+      internalID: 1476093589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_005_ThresholdReached_Ring_v01_10
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 208
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1aecbf6ce9ae834292480b6588ae53f
+      internalID: 2057907304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_005_ThresholdReached_Ring_v01_16
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 165
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dccbf7a366401e42b70d66d0604fa9a
+      internalID: 235583500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_005_ThresholdReached_Ring_v01_17
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 185
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ffe34e0d0505d41b95cd0ea9821cc6
+      internalID: 1294452805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_TRT_005_ThresholdReached_Ring_v01_21
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 88
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4299eac356bccfc438eb2d58da34bf8c
+      internalID: -428911797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 177b15cb433ac8e49aa72560b6e5946d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1272.0,"y":1236.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      UI_TRT_005_ThresholdReached_Ring_v01_0: 9168102475743526838
+      UI_TRT_005_ThresholdReached_Ring_v01_1: 1027368448
+      UI_TRT_005_ThresholdReached_Ring_v01_10: 2057907304
+      UI_TRT_005_ThresholdReached_Ring_v01_11: 328006985
+      UI_TRT_005_ThresholdReached_Ring_v01_12: -191251410
+      UI_TRT_005_ThresholdReached_Ring_v01_13: 201711937
+      UI_TRT_005_ThresholdReached_Ring_v01_14: 667665302
+      UI_TRT_005_ThresholdReached_Ring_v01_15: 514510907
+      UI_TRT_005_ThresholdReached_Ring_v01_16: 235583500
+      UI_TRT_005_ThresholdReached_Ring_v01_17: 1294452805
+      UI_TRT_005_ThresholdReached_Ring_v01_18: -769585319
+      UI_TRT_005_ThresholdReached_Ring_v01_19: 103159855
+      UI_TRT_005_ThresholdReached_Ring_v01_2: 872310676
+      UI_TRT_005_ThresholdReached_Ring_v01_20: 243413358
+      UI_TRT_005_ThresholdReached_Ring_v01_21: -428911797
+      UI_TRT_005_ThresholdReached_Ring_v01_22: -525594376
+      UI_TRT_005_ThresholdReached_Ring_v01_23: -1189165387
+      UI_TRT_005_ThresholdReached_Ring_v01_24: -1908312062
+      UI_TRT_005_ThresholdReached_Ring_v01_3: 872610308
+      UI_TRT_005_ThresholdReached_Ring_v01_4: 1419035563
+      UI_TRT_005_ThresholdReached_Ring_v01_5: -909700935
+      UI_TRT_005_ThresholdReached_Ring_v01_6: 1474214804
+      UI_TRT_005_ThresholdReached_Ring_v01_7: -1275128824
+      UI_TRT_005_ThresholdReached_Ring_v01_8: 1953000308
+      UI_TRT_005_ThresholdReached_Ring_v01_9: 1476093589
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,290 @@
+fileFormatVersion: 2
+guid: d192735aac8f1214b90e17e1b1842721
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3741934022373831534
+    second: UI_TRT_001_TraitRow_v01_0
+  - first:
+      213: 605815133642559106
+    second: UI_TRT_001_TraitRow_v01_1
+  - first:
+      213: 5841814493743554362
+    second: UI_TRT_001_TraitRow_v01_2
+  - first:
+      213: 715098077216067424
+    second: UI_TRT_001_TraitRow_v01_3
+  - first:
+      213: 4933553355249715219
+    second: UI_TRT_001_TraitRow_v01_4
+  - first:
+      213: 7165925132232839710
+    second: UI_TRT_001_TraitRow_v01_5
+  - first:
+      213: 2295992139112627990
+    second: UI_TRT_001_TraitRow_v01_6
+  - first:
+      213: 8025717811386745280
+    second: UI_TRT_001_TraitRow_v01_7
+  - first:
+      213: -5839418739109971302
+    second: UI_TRT_001_TraitRow_v01_8
+  - first:
+      213: 2707551433120909640
+    second: UI_TRT_001_TraitRow_v01_9
+  - first:
+      213: -6659425654418857771
+    second: UI_TRT_001_TraitRow_v01_10
+  - first:
+      213: -6716197759874166696
+    second: UI_TRT_001_TraitRow_v01_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Compact Row Frame
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 705
+        width: 1559
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e637a80fa250ee330800000000000000
+      internalID: 3741934022373831534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Detail Row Frame
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 452
+        width: 1566
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f78c0ba0c78b54390e5eac0045acf1
+      internalID: 605815133642559106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Threshold Empty
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 301
+        width: 128
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328d0b620d1694d479249c3379f8230a
+      internalID: 5841814493743554362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Threshold Filled
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 300
+        width: 128
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d273bd0078614864bb34f9d6349da48e
+      internalID: 993280582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Threshold Focus
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 301
+        width: 128
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efb952fb411452c46a0cf3bc98ffe336
+      internalID: -1205141483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 147461afde9d72c47b742fcfa770d6af
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1672.0,"y":941.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Compact Row Frame: 3741934022373831534
+      Detail Row Frame: 605815133642559106
+      Threshold Empty: 5841814493743554362
+      Threshold Filled: 993280582
+      Threshold Focus: -1205141483
+      UI_TRT_001_TraitRow_v01_10: 601421440
+      UI_TRT_001_TraitRow_v01_11: 1178624092
+      UI_TRT_001_TraitRow_v01_5: -347029782
+      UI_TRT_001_TraitRow_v01_6: 1949898954
+      UI_TRT_001_TraitRow_v01_7: -1130910280
+      UI_TRT_001_TraitRow_v01_8: 1351542746
+      UI_TRT_001_TraitRow_v01_9: -1703704407
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

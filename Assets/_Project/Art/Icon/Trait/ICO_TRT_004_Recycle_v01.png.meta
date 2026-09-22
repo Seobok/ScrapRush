@@ -1,43 +1,37 @@
 fileFormatVersion: 2
-guid: d192735aac8f1214b90e17e1b1842721
+guid: 4cb09ec1ced4f284a8e7adfd50793278
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3741934022373831534
-    second: UI_TRT_001_TraitRow_v01_0
+      213: -761355304499088391
+    second: ICO_TRT_004_Recycle_v01_0
   - first:
-      213: 605815133642559106
-    second: UI_TRT_001_TraitRow_v01_1
+      213: 8259411125431673444
+    second: ICO_TRT_004_Recycle_v01_1
   - first:
-      213: 5841814493743554362
-    second: UI_TRT_001_TraitRow_v01_2
+      213: -6068861682974444158
+    second: ICO_TRT_004_Recycle_v01_2
   - first:
-      213: 715098077216067424
-    second: UI_TRT_001_TraitRow_v01_3
+      213: -1313367289837118966
+    second: ICO_TRT_004_Recycle_v01_3
   - first:
-      213: 4933553355249715219
-    second: UI_TRT_001_TraitRow_v01_4
+      213: 1586683964249340894
+    second: ICO_TRT_004_Recycle_v01_4
   - first:
-      213: 7165925132232839710
-    second: UI_TRT_001_TraitRow_v01_5
+      213: -7995587233766936867
+    second: ICO_TRT_004_Recycle_v01_5
   - first:
-      213: 2295992139112627990
-    second: UI_TRT_001_TraitRow_v01_6
+      213: 6586857556555445113
+    second: ICO_TRT_004_Recycle_v01_6
   - first:
-      213: 8025717811386745280
-    second: UI_TRT_001_TraitRow_v01_7
+      213: 3288772271125479181
+    second: ICO_TRT_004_Recycle_v01_7
   - first:
-      213: -5839418739109971302
-    second: UI_TRT_001_TraitRow_v01_8
+      213: 9182198707384780932
+    second: ICO_TRT_004_Recycle_v01_8
   - first:
-      213: 2707551433120909640
-    second: UI_TRT_001_TraitRow_v01_9
-  - first:
-      213: -6659425654418857771
-    second: UI_TRT_001_TraitRow_v01_10
-  - first:
-      213: -6716197759874166696
-    second: UI_TRT_001_TraitRow_v01_11
+      213: 4677869497680804270
+    second: ICO_TRT_004_Recycle_v01_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -70,7 +64,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -79,7 +73,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -146,13 +140,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_TRT_001_TraitRow_v01_0
+      name: ICO_TRT_004_Recycle_v01_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 695
-        width: 1578
-        height: 226
+        x: 0
+        y: 0
+        width: 810
+        height: 918
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e637a80fa250ee330800000000000000
-      internalID: 3741934022373831534
+      spriteID: 9f3f877626f1f65f0800000000000000
+      internalID: -761355304499088391
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_TRT_001_TraitRow_v01_1
+      name: ICO_TRT_004_Recycle_v01_1
       rect:
         serializedVersion: 2
-        x: 46
-        y: 265
-        width: 1581
-        height: 420
+        x: 294
+        y: 721
+        width: 841
+        height: 477
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +177,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 28e025087a9486800800000000000000
-      internalID: 605815133642559106
+      spriteID: 462a34988a25f9270800000000000000
+      internalID: 8259411125431673444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_TRT_001_TraitRow_v01_2
+      name: ICO_TRT_004_Recycle_v01_2
       rect:
         serializedVersion: 2
-        x: 48
-        y: 46
-        width: 521
-        height: 233
+        x: 621
+        y: 25
+        width: 612
+        height: 716
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +199,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a3f105fa45b421150800000000000000
-      internalID: 5841814493743554362
+      spriteID: 285345b147217cba0800000000000000
+      internalID: -6068861682974444158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_TRT_001_TraitRow_v01_3
+      name: ICO_TRT_004_Recycle_v01_3
       rect:
         serializedVersion: 2
-        x: 926
-        y: 241
-        width: 136
-        height: 86
+        x: 416
+        y: 117
+        width: 13
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06f470899e98ce900800000000000000
-      internalID: 715098077216067424
+      spriteID: a0a14ad886bf5cde0800000000000000
+      internalID: -1313367289837118966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_TRT_001_TraitRow_v01_4
+      name: ICO_TRT_004_Recycle_v01_4
       rect:
         serializedVersion: 2
-        x: 1075
-        y: 256
-        width: 365
-        height: 73
+        x: 512
+        y: 117
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,20 +243,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 318881433a0877440800000000000000
-      internalID: 4933553355249715219
+      spriteID: edbf3eba8a8050610800000000000000
+      internalID: 1586683964249340894
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_TRT_001_TraitRow_v01_5
+      name: ICO_TRT_004_Recycle_v01_5
       rect:
         serializedVersion: 2
-        x: 1457
-        y: 240
-        width: 152
-        height: 87
+        x: 488
+        y: 75
+        width: 15
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +265,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e1258c9e0fa727360800000000000000
-      internalID: 7165925132232839710
+      spriteID: dde6ca8f5c7f90190800000000000000
+      internalID: -7995587233766936867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_TRT_001_TraitRow_v01_6
+      name: ICO_TRT_004_Recycle_v01_6
       rect:
         serializedVersion: 2
-        x: 756
-        y: 157
-        width: 33
-        height: 68
+        x: 938
+        y: 93
+        width: 8
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,20 +287,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61fb5e29fa00ddf10800000000000000
-      internalID: 2295992139112627990
+      spriteID: 973b59c8c08396b50800000000000000
+      internalID: 6586857556555445113
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_TRT_001_TraitRow_v01_7
+      name: ICO_TRT_004_Recycle_v01_7
       rect:
         serializedVersion: 2
-        x: 925
-        y: 43
-        width: 139
-        height: 192
+        x: 948
+        y: 87
+        width: 6
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,20 +309,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0c18b3fc3d3116f60800000000000000
-      internalID: 8025717811386745280
+      spriteID: d0fb697b4f014ad20800000000000000
+      internalID: 3288772271125479181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_TRT_001_TraitRow_v01_8
+      name: ICO_TRT_004_Recycle_v01_8
       rect:
         serializedVersion: 2
-        x: 1015
-        y: 115
-        width: 499
-        height: 133
+        x: 502
+        y: 81
+        width: 10
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,20 +331,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9a3798689736fea0800000000000000
-      internalID: -5839418739109971302
+      spriteID: 48888b23319bd6f70800000000000000
+      internalID: 9182198707384780932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI_TRT_001_TraitRow_v01_9
+      name: ICO_TRT_004_Recycle_v01_9
       rect:
         serializedVersion: 2
-        x: 1458
-        y: 44
-        width: 153
-        height: 191
+        x: 613
+        y: 65
+        width: 13
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,52 +353,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8498546eea7239520800000000000000
-      internalID: 2707551433120909640
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_TRT_001_TraitRow_v01_10
-      rect:
-        serializedVersion: 2
-        x: 770
-        y: 22
-        width: 49
-        height: 130
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5d0ad3486a7f493a0800000000000000
-      internalID: -6659425654418857771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UI_TRT_001_TraitRow_v01_11
-      rect:
-        serializedVersion: 2
-        x: 1076
-        y: 43
-        width: 361
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8501d69a8b54bc2a0800000000000000
-      internalID: -6716197759874166696
+      spriteID: ea936e216812be040800000000000000
+      internalID: 4677869497680804270
       vertices: []
       indices: 
       edges: []
@@ -413,7 +363,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -423,18 +373,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI_TRT_001_TraitRow_v01_0: 3741934022373831534
-      UI_TRT_001_TraitRow_v01_1: 605815133642559106
-      UI_TRT_001_TraitRow_v01_10: -6659425654418857771
-      UI_TRT_001_TraitRow_v01_11: -6716197759874166696
-      UI_TRT_001_TraitRow_v01_2: 5841814493743554362
-      UI_TRT_001_TraitRow_v01_3: 715098077216067424
-      UI_TRT_001_TraitRow_v01_4: 4933553355249715219
-      UI_TRT_001_TraitRow_v01_5: 7165925132232839710
-      UI_TRT_001_TraitRow_v01_6: 2295992139112627990
-      UI_TRT_001_TraitRow_v01_7: 8025717811386745280
-      UI_TRT_001_TraitRow_v01_8: -5839418739109971302
-      UI_TRT_001_TraitRow_v01_9: 2707551433120909640
+      ICO_TRT_004_Recycle_v01_0: -761355304499088391
+      ICO_TRT_004_Recycle_v01_1: 8259411125431673444
+      ICO_TRT_004_Recycle_v01_2: -6068861682974444158
+      ICO_TRT_004_Recycle_v01_3: -1313367289837118966
+      ICO_TRT_004_Recycle_v01_4: 1586683964249340894
+      ICO_TRT_004_Recycle_v01_5: -7995587233766936867
+      ICO_TRT_004_Recycle_v01_6: 6586857556555445113
+      ICO_TRT_004_Recycle_v01_7: 3288772271125479181
+      ICO_TRT_004_Recycle_v01_8: 9182198707384780932
+      ICO_TRT_004_Recycle_v01_9: 4677869497680804270
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

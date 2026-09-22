@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: 27c75117302adf64cbf19be983a7994a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -270799181382929283
+    second: ICO_TRT_007_Overload_v01_0
+  - first:
+      213: -6868312818082393572
+    second: ICO_TRT_007_Overload_v01_1
+  - first:
+      213: 4991214736696050974
+    second: ICO_TRT_007_Overload_v01_2
+  - first:
+      213: 6596799955634200601
+    second: ICO_TRT_007_Overload_v01_3
+  - first:
+      213: -6256730461932591842
+    second: ICO_TRT_007_Overload_v01_4
+  - first:
+      213: -542152433697557901
+    second: ICO_TRT_007_Overload_v01_5
+  - first:
+      213: 3370712525962197704
+    second: ICO_TRT_007_Overload_v01_6
+  - first:
+      213: 2782330688689318773
+    second: ICO_TRT_007_Overload_v01_7
+  - first:
+      213: -4128024211371529786
+    second: ICO_TRT_007_Overload_v01_8
+  - first:
+      213: -6121421961741156482
+    second: ICO_TRT_007_Overload_v01_9
+  - first:
+      213: 8868910918158437960
+    second: ICO_TRT_007_Overload_v01_10
+  - first:
+      213: -209667722349131172
+    second: ICO_TRT_007_Overload_v01_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ICO_TRT_007_Overload_v01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1225
+        height: 1235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d74343c449ded3cf0800000000000000
+      internalID: -270799181382929283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_007_Overload_v01_1
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1235
+        width: 47
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c12dfefb1e9dea0a0800000000000000
+      internalID: -6868312818082393572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_007_Overload_v01_2
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 1022
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e158672cb5b544540800000000000000
+      internalID: 4991214736696050974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_007_Overload_v01_3
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 915
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 910a3e9bb9a8c8b50800000000000000
+      internalID: 6596799955634200601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_007_Overload_v01_4
+      rect:
+        serializedVersion: 2
+        x: 1190
+        y: 886
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1564216bc0ab29a0800000000000000
+      internalID: -6256730461932591842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_007_Overload_v01_5
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 310
+        width: 11
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 372f757eb33e978f0800000000000000
+      internalID: -542152433697557901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_007_Overload_v01_6
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 115
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cabfedfe2d27ce20800000000000000
+      internalID: 3370712525962197704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_007_Overload_v01_7
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 87
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57baefa1503dc9620800000000000000
+      internalID: 2782330688689318773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_007_Overload_v01_8
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 63
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c9ecf8d9df46b6c0800000000000000
+      internalID: -4128024211371529786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_007_Overload_v01_9
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 52
+        width: 15
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7fb42298275c0ba0800000000000000
+      internalID: -6121421961741156482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_007_Overload_v01_10
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 33
+        width: 19
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84eca659d73b41b70800000000000000
+      internalID: 8868910918158437960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ICO_TRT_007_Overload_v01_11
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 39
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5ac380415c171df0800000000000000
+      internalID: -209667722349131172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ICO_TRT_007_Overload_v01_0: -270799181382929283
+      ICO_TRT_007_Overload_v01_1: -6868312818082393572
+      ICO_TRT_007_Overload_v01_10: 8868910918158437960
+      ICO_TRT_007_Overload_v01_11: -209667722349131172
+      ICO_TRT_007_Overload_v01_2: 4991214736696050974
+      ICO_TRT_007_Overload_v01_3: 6596799955634200601
+      ICO_TRT_007_Overload_v01_4: -6256730461932591842
+      ICO_TRT_007_Overload_v01_5: -542152433697557901
+      ICO_TRT_007_Overload_v01_6: 3370712525962197704
+      ICO_TRT_007_Overload_v01_7: 2782330688689318773
+      ICO_TRT_007_Overload_v01_8: -4128024211371529786
+      ICO_TRT_007_Overload_v01_9: -6121421961741156482
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

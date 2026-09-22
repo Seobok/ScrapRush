@@ -51,6 +51,7 @@ namespace ScrapRush.Player
         public int ChainHitCount { get; private set; }
         public int BrokenCount { get; private set; }
         public float ReadyHeldSeconds { get; private set; }
+        public event Action<int> TraitCountChanged;
         public event Action<ElectricDischargeInfo> Discharged;
         public event Action<int> StormStarted;
 
@@ -73,6 +74,7 @@ namespace ScrapRush.Player
 
         public void SetTraitCount(int value)
         {
+            int previousCount = traitCount;
             int previousTier = ActiveTier;
             traitCount = Mathf.Clamp(value, 0, 8);
             int newTier = ActiveTier;
@@ -81,6 +83,7 @@ namespace ScrapRush.Player
                 ready = false;
                 cooldownRemaining = 0f;
                 stormShotsRemaining = 0;
+                NotifyTraitCountChanged(previousCount);
                 return;
             }
             if (previousTier == 0)
@@ -88,6 +91,12 @@ namespace ScrapRush.Player
                 ready = false;
                 cooldownRemaining = settings.cooldown;
             }
+            NotifyTraitCountChanged(previousCount);
+        }
+
+        private void NotifyTraitCountChanged(int previousCount)
+        {
+            if (traitCount != previousCount) TraitCountChanged?.Invoke(traitCount);
         }
 
         public void ResetStageState()

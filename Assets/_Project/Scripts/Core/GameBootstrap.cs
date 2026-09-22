@@ -1,5 +1,6 @@
 using ScrapRush.Debugging;
 using ScrapRush.Player;
+using ScrapRush.UI;
 using ScrapRush.World;
 using UnityEngine;
 
@@ -69,6 +70,18 @@ namespace ScrapRush.Core
                 var hud = hudObject.GetComponent<StageHud>();
                 if (hud == null) hud = hudObject.AddComponent<StageHud>();
                 hud.Initialize(stage);
+            }
+            GameObject traitHudObject = GameObject.Find("HUD_TraitRail");
+            if (traitHudObject == null)
+            {
+                Debug.LogError("HUD_TraitRail must be present in the gameplay scene.", this);
+            }
+            else
+            {
+                var traitView = traitHudObject.GetComponent<TraitHudRail>();
+                var traitPresenter = traitHudObject.GetComponent<TraitHudPresenter>();
+                if (traitPresenter == null) traitPresenter = traitHudObject.AddComponent<TraitHudPresenter>();
+                traitPresenter.Initialize(traitView, magnet, electric);
             }
             CreateChild("DebugHUD").AddComponent<CorePlayDebugHud>().Initialize(world, player.transform, ores,
                 scraps, magnet, electric);

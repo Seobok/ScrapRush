@@ -56,6 +56,7 @@ namespace ScrapRush.Player
         public int PulseCount { get; private set; }
         public int PulseHitCount { get; private set; }
         public int PulseBrokenCount { get; private set; }
+        public event Action<int> TraitCountChanged;
         public event Action<int> FieldStarted;
         public event Action<int> FieldEnded;
         public event Action<GravityPulseInfo> Pulsed;
@@ -91,15 +92,23 @@ namespace ScrapRush.Player
 
         public void SetTraitCount(int value)
         {
+            int previousCount = traitCount;
             traitCount = Mathf.Clamp(value, 0, 8);
             scraps?.SetAbsorbRangeMultiplier(ActiveTier >= 2 ? settings.absorbRangeMultiplier : 1f);
             if (ActiveTier == 0)
             {
                 pendingAbsorbs = 0;
                 CancelField();
+                NotifyTraitCountChanged(previousCount);
                 return;
             }
             TryStartField();
+            NotifyTraitCountChanged(previousCount);
+        }
+
+        private void NotifyTraitCountChanged(int previousCount)
+        {
+            if (traitCount != previousCount) TraitCountChanged?.Invoke(traitCount);
         }
 
         private void LateUpdate()
