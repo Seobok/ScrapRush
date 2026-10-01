@@ -14,6 +14,77 @@ namespace ScrapRush.UI
 
         private Coroutine toastRoutine;
 
+        private RectTransform railRect;
+        private UnityEngine.UI.Image frame;
+        private Transform header;
+        private float verticalPadding = -1f;
+
+        private void Awake()
+        {
+            foreach (TraitHudRow row in rows)
+            {
+                if (row != null) row.SetState(0, 0);
+            }
+            RefreshLayout();
+        }
+
+        public void RefreshLayout()
+        {
+            if (railRect == null) railRect = GetComponent<RectTransform>();
+            if (frame == null) frame = GetComponent<UnityEngine.UI.Image>();
+            if (header == null) header = transform.Find("Header");
+            if (railRect == null) return;
+
+            if (verticalPadding < 0f)
+            {
+                // Capture the authored full rail before its height changes with active traits.
+                float fullContentHeight = 0f;
+                int rowCount = 0;
+                foreach (TraitHudRow row in rows)
+                {
+                    if (row == null) continue;
+                    fullContentHeight += ((RectTransform)row.transform).rect.height;
+                    if (rowCount++ > 0) fullContentHeight += 2f;
+                }
+                verticalPadding = Mathf.Max(0f, (railRect.rect.height - fullContentHeight) * 0.5f);
+            }
+            float padding = verticalPadding;
+            const float spacing = 2f;
+            float height = padding * 2f;
+            int visibleCount = 0;
+            foreach (TraitHudRow row in rows)
+            {
+                if (row == null) continue;
+                bool visible = row.IsEffectActive;
+                row.gameObject.SetActive(visible);
+                if (!visible) continue;
+                height += ((RectTransform)row.transform).rect.height;
+                if (visibleCount++ > 0) height += spacing;
+            }
+
+            bool hasActiveTraits = visibleCount > 0;
+            if (frame != null) frame.enabled = hasActiveTraits;
+            if (header != null)
+            {
+                header.gameObject.SetActive(hasActiveTraits);
+                RectTransform headerRect = (RectTransform)header;
+                headerRect.anchorMin = headerRect.anchorMax = new Vector2(0.5f, 1f);
+                headerRect.anchoredPosition = new Vector2(0f, 12f);
+            }
+            railRect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, hasActiveTraits ? height : 0f);
+
+            float offset = padding;
+            foreach (TraitHudRow row in rows)
+            {
+                if (row == null || !row.IsEffectActive) continue;
+                RectTransform rect = (RectTransform)row.transform;
+                float rowHeight = rect.rect.height;
+                rect.anchorMin = rect.anchorMax = new Vector2(0.5f, 1f);
+                rect.pivot = new Vector2(0.5f, 0.5f);
+                rect.anchoredPosition = new Vector2(0f, -offset - rowHeight * 0.5f);
+                offset += rowHeight + spacing;
+            }
+        }
         public void SetTraitState(TraitId traitId, int baseCount, int virtualCount = 0, bool emphasizeChange = false,
             string thresholdName = null)
         {
@@ -22,6 +93,7 @@ namespace ScrapRush.UI
 
             int previousCount = row.EffectiveCount;
             row.SetState(baseCount, virtualCount, emphasizeChange);
+            RefreshLayout();
 
             int currentCount = row.EffectiveCount;
             if (emphasizeChange && currentCount > previousCount && IsThreshold(currentCount))

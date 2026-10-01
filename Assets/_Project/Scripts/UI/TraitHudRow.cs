@@ -38,6 +38,7 @@ namespace ScrapRush.UI
 
         public TraitId TraitId => traitId;
         public int EffectiveCount => effectiveCount;
+        public bool IsEffectActive => effectiveCount >= Thresholds[0];
 
         public void SetIdentity(TraitId id, string displayName, Sprite traitIcon)
         {
@@ -52,7 +53,12 @@ namespace ScrapRush.UI
             virtualCount = Mathf.Max(0, virtualCount);
             effectiveCount = Mathf.Min(8, baseCount + virtualCount);
 
-            if (canvasGroup != null) canvasGroup.alpha = effectiveCount == 0 ? 0.55f : 1f;
+            if (canvasGroup != null)
+            {
+                canvasGroup.alpha = IsEffectActive ? 1f : 0f;
+                canvasGroup.interactable = false;
+                canvasGroup.blocksRaycasts = false;
+            }
             if (countText != null) countText.text = FormatCount(effectiveCount);
 
             bool showVirtual = virtualCount > 0;
@@ -71,7 +77,7 @@ namespace ScrapRush.UI
                 dot.color = Color.white;
             }
 
-            if (emphasizeChange)
+            if (emphasizeChange && IsEffectActive)
             {
                 emphasisUntil = Time.unscaledTime + 0.45f;
                 if (rowChangedGlow != null) rowChangedGlow.gameObject.SetActive(true);
